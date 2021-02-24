@@ -1,0 +1,88 @@
+// 网页样式
+$app-background: #f5f5f5;
+$app-fontColor: #333;
+$app-fontColor-active: #1890ff;
+$border-color: #d9d9d9;
+$icon-color: #bfbfbf;
+$split-color: #bfbfbf;
+$boxshadow-color: rgba(0, 0, 0, 0.2);
+$app-mask-background: rgba(0, 0, 0, 0.6);
+$app-mask-iconColor: #fff;
+
+// 全局loading
+$loading-background: rgba(0, 0, 0, 0.85);
+$loading-color: #fff;
+
+// 滚动条
+$scrollbar-thumb: rgba(0, 0, 0, 0.6);
+
+// 左侧导航栏
+$navBar-background: #001529;
+$navBar-expend-background: #000c17;
+$navBar-color: rgba(255, 255, 255, 0.65);
+$navBar-hover-color: #fff;
+$navBar-item-active: #1890ff;
+
+// header头部
+$header-background: #fff;
+$header-tips-color: #8c8c8c;
+$header-tips-active-color: #141414;
+
+// router中心部分
+$router-background: #fff;
+
+// 云端资源
+$cloud-folder-color: #f6bd16;
+$cloud-file-color: #8c8c8c;
+$cloud-upload-background: #1890ff;
+$cloud-upload-background-active: #40a9ff;
+$cloud-upload-icon-color: #fff;
+// 右键菜单
+$cloud-rightMenu-background: #fff;
+$cloud-rightMenu-fontColor: #595959;
+$cloud-rightMenu-item-background-active: #f5f5f5;
+$cloud-rightMenu-disabled-fontColor: #bfbfbf;
+// 查看文件的弹窗
+$cloud-fileCheckModal-background: #f5f5f5;
+$app-fontColor-active-active: #40a9ff;
+
+// 多文件上传
+$upload-multiple-background: #f5f5f5;
+$upload-multiple-iconColor: #d9d9d9;
+$upload-multiple-fileColor: #595959;
+$upload-multiple-errorColor: #e8684a;
+$upload-multiple-loading-background: #bfbfbf;
+$upload-multiple-loading-color: #fff;
+
+// 文章编辑
+$article-editor-upload-background: #f5f5f5;
+$article-editor-upload-iconColor: #d9d9d9;
+
+// 相册
+$album-background: #fff;
+$album-operate-mask-background: rgba(0, 0, 0, 0.8);
+$album-operate-icon-color: #fff;
+$album-add-icon-background: #1890ff;
+$album-add-icon-background-active: #40a9ff;
+$album-add-icon-color: #fff;
+$album-modal-upload-background: #f5f5f5;
+$album-modal-upload-color: #d9d9d9;
+$album-modal-upload-color-active: #1890ff;
+
+// 照片缩放器
+$imageZoom-background: #000;
+$imageZoom-scrollbar-background: #000;
+$imageZoom-thumb-background: #595959;
+$imageZoom-icon-color: #d9d9d9;
+$imageZoom-icon-color-active: #fff;
+
+// 照片
+$photo-background: #d9d9d9;
+
+// 头像
+$avatar-font-color: #595959;
+$avatar-font-color-active: #141414;
+
+// 关键字
+$keyword-background: #e8684a;
+$keyword-color: #fff;

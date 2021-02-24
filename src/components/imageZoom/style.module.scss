@@ -1,0 +1,64 @@
+@import '../../assets/styles/theme.scss';
+
+.image-zoom {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $imageZoom-background;
+    z-index: 99999;
+    .image-wrap {
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        .image-inner-wrap {
+            padding: 4vw;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                transition: all 0.2s ease-in-out 0s;
+            }
+        }
+    }
+    // 滚动条样式
+    ::-webkit-scrollbar {
+        width: 0.4vw;
+        height: 0.4vw;
+        background: $imageZoom-scrollbar-background;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0.3vw;
+        background: $imageZoom-thumb-background;
+    }
+    ::-webkit-scrollbar-corner {
+        background: $imageZoom-scrollbar-background;
+    }
+
+    .close-wrap,
+    .operate-wrap {
+        position: absolute;
+        top: 1vw;
+        .iconfont {
+            cursor: pointer;
+            font-size: 3rem;
+            color: $imageZoom-icon-color;
+            &:hover {
+                color: $imageZoom-icon-color-active;
+            }
+        }
+    }
+    .close-wrap {
+        right: 1vw;
+    }
+    .operate-wrap {
+        left: 1vw;
+        .iconfont {
+            &:first-child {
+                margin-right: 1vw;
+            }
+        }
+    }
+}

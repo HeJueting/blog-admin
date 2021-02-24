@@ -1,0 +1,9 @@
+// 操作按钮
+.operate-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.6vw;
+    .btn {
+        margin-left: 1.6vw;
+    }
+}

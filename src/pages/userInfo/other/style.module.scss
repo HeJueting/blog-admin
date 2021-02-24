@@ -1,0 +1,25 @@
+@import '../../../assets/styles/theme.scss';
+
+.other-info {
+    .wrap {
+        margin-top: 2.4vw;
+        &:first-child {
+            margin-top: 1vw;
+        }
+        .wrap-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1vw;
+            h5 {
+                font-weight: bold;
+                font-size: 1.6rem;
+                padding-left: 1.2vw;
+                border-left: 0.3vw solid $border-color;
+            }
+        }
+    }
+}
+.title-form-wrap {
+    margin-top: 1.6vw;
+}

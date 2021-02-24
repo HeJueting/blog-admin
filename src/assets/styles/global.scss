@@ -1,0 +1,185 @@
+@import './theme.scss';
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+img {
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+}
+
+body {
+    color: $app-fontColor;
+    background: $app-background;
+    font-size: 1.4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+h1 {
+    font-size: 3.6rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.8rem;
+}
+h4 {
+    font-size: 2.4rem;
+}
+h5 {
+    font-size: 2rem;
+}
+h6 {
+    font-size: 1.6rem;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+    width: 0.4vw;
+    height: 0.4vw;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 0.3vw;
+    background: $scrollbar-thumb;
+}
+
+// 带标题的表单
+.title-form-wrap {
+    display: flex;
+    align-items: center;
+    h6 {
+        width: 6vw;
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+    .form-right {
+        width: calc(100% - 6vw);
+    }
+    .start-end-time {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .ant-input-affix-wrapper {
+            width: calc(50% - 2vw);
+        }
+    }
+    textarea {
+        resize: none;
+    }
+    .split-line {
+        display: block;
+        width: 1vw;
+        margin: 0 1vw;
+        border-top: 0.05vw solid $border-color;
+    }
+    .iconfont {
+        color: $icon-color;
+    }
+}
+
+// 表格操作
+.table-operate {
+    display: flex;
+    align-items: center;
+    .split-line {
+        display: inline-block;
+        height: 0.6vw;
+        border-left: 0.05vw solid $border-color;
+    }
+    span {
+        font-size: 1.2rem;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 1vw;
+        }
+        &:hover {
+            color: $app-fontColor-active;
+        }
+    }
+    .ant-input-number-handler {
+        margin-left: 0;
+        .anticon {
+            width: 0.5vw;
+            height: 0.5vw;
+            margin-left: 0;
+        }
+    }
+}
+
+// 模块标题
+.module-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    padding-left: 1.2vw;
+    border-left: 0.3vw solid $app-fontColor;
+}
+
+// 表格操作
+.app-table-operate {
+    display: flex;
+    align-items: center;
+    .split-line {
+        display: inline-block;
+        height: 0.6vw;
+        border-left: 0.05vw solid $border-color;
+        margin: 0 0.6vw;
+    }
+    .operate-span {
+        margin: 0 0.5vw;
+        &:hover {
+            color: $app-fontColor-active;
+            cursor: pointer;
+        }
+    }
+    .weight-wrap {
+        .operate-span {
+            &:hover {
+                cursor: initial;
+                color: $app-fontColor;
+            }
+        }
+    }
+}
+.app-table-pagination {
+    margin-top: 1vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+// 关键字
+.braft-custom-keywords {
+    background: $keyword-background;
+    border-radius: 0.25vw;
+    padding: 0.2vw 0.8vw;
+    color: $keyword-color;
+    margin: 0 0.5vw;
+}

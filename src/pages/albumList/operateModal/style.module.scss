@@ -1,0 +1,86 @@
+@import '../../../assets/styles/theme.scss';
+
+.bacImg-form-wrap {
+    display: flex;
+    margin-top: 1.6vw;
+    h6 {
+        width: 5.2vw;
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    .bacImg-box {
+        width: calc(100% - 6vw);
+        .upload-wrap {
+            width: 12vw;
+            height: 8vw;
+            position: relative;
+            &:hover {
+                cursor: pointer;
+                .upload-custom {
+                    border-color: $album-modal-upload-color-active;
+                    transition: all 0.3s ease-in-out 0s;
+                    .icon-add2 {
+                        color: $album-modal-upload-color-active;
+                        transition: all 0.3s ease-in-out 0s;
+                    }
+                }
+            }
+            .upload-custom {
+                width: 12vw;
+                height: 8vw;
+                background-color: $album-modal-upload-background;
+                border: 0.05vw dashed $album-modal-upload-color;
+                transition: all 0.3s ease-in-out 0s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon-add2 {
+                    font-size: 8rem;
+                    color: $album-modal-upload-color;
+                    transition: all 0.3s ease-in-out 0s;
+                }
+            }
+        }
+        .image-wrap {
+            position: relative;
+            width: 12vw;
+            height: 8vw;
+            background: $album-modal-upload-background;
+            .cover-image {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+            }
+            &:hover {
+                .delete-mask {
+                    opacity: 1;
+                    transition: opacity 0.3s ease-in-out 0s;
+                }
+            }
+            .delete-mask {
+                z-index: 2;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out 0s;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: $app-mask-background;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon-delete {
+                    color: $app-mask-iconColor;
+                    cursor: pointer;
+                    font-size: 5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

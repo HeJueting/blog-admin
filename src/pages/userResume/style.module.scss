@@ -1,0 +1,52 @@
+@import '../../assets/styles/theme.scss';
+
+.user-resume {
+    min-height: calc(100vh - 8vw);
+    // 编辑简历
+    .editor-wrap {
+        .option-wrap {
+            margin-top: 1.6vw;
+            display: flex;
+            height: 1.67vw;
+            align-items: center;
+            .resume-form-wrap {
+                &:nth-child(2) {
+                    margin-left: 4vw;
+                    h6 {
+                        width: 4vw;
+                    }
+                    .ant-input-affix-wrapper {
+                        width: 20vw;
+                    }
+                }
+            }
+        }
+    }
+    // 预览简历
+    .preview-wrap {
+        p {
+            min-height: 1vw;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content {
+            border: 0.05vw solid $border-color;
+            min-height: 20vw;
+            margin-top: 2vw;
+            padding: 1vw 1.6vw;
+        }
+    }
+
+    // 操作
+    .operate-wrap {
+        margin-top: 2vw;
+        display: flex;
+        justify-content: flex-end;
+        .operate-btn {
+            margin-left: 1.6vw;
+        }
+    }
+}

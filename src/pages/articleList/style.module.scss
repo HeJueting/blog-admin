@@ -1,0 +1,17 @@
+@import '../../assets/styles/theme.scss';
+
+.filter-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vw;
+    .select {
+        width: 10vw;
+        margin-right: 1vw;
+        &:nth-child(3) {
+            width: 12vw;
+        }
+    }
+    .search {
+        width: 12vw;
+    }
+}

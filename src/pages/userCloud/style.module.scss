@@ -1,0 +1,112 @@
+@import '../../assets/styles/theme.scss';
+
+// 顶部导航
+.cloud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+    .router-wrap {
+        vertical-align: middle;
+        height: 1vw;
+        line-height: 1vw;
+        .name {
+            font-size: 1.6rem;
+            cursor: pointer;
+            &:hover {
+                color: $app-fontColor-active;
+            }
+        }
+        .lastName {
+            font-size: 1.6rem;
+        }
+        .split {
+            font-size: 1.6rem;
+            color: $split-color;
+            margin: 0 0.8rem;
+        }
+    }
+    .btn-wrap {
+        display: flex;
+    }
+}
+
+// 中间资源部分
+.cloud-content {
+    position: relative;
+    // 上传按钮
+    .upload-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        background: $cloud-upload-background;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0.1vw 0.15vw $boxshadow-color;
+        &:hover {
+            cursor: pointer;
+            background: $cloud-upload-background-active;
+        }
+        .icon-add1 {
+            font-size: 2rem;
+            color: $cloud-upload-icon-color;
+        }
+    }
+}
+
+// 创建存储桶的容器
+.fileCheck-modal-wrap {
+    display: flex;
+    align-items: center;
+    &:not(:first-child) {
+        margin-top: 1vw;
+    }
+    h6 {
+        font-size: 1.4rem;
+        width: 4vw;
+    }
+    p {
+        display: block;
+        width: calc(100% - 4vw);
+        padding: 0.4vw 0.8vw;
+        background: $cloud-fileCheckModal-background;
+        font-size: 1.2rem;
+        border-radius: 0.3vw;
+    }
+}
+.fileCheck-copy-wrap {
+    text-align: right;
+    margin-top: 0.3vw;
+    color: $app-fontColor-active;
+    cursor: pointer;
+    &:hover {
+        color: $app-fontColor-active-active;
+    }
+}
+.user-cloud-fileCheck-modal {
+    .ant-modal-confirm-btns {
+        .ant-btn {
+            line-height: 1;
+            font-size: 1.2rem;
+            padding: 0.2vw 1vw;
+        }
+    }
+}
+
+// 弹窗中的排列
+.form-wrap {
+    &:not(:last-child) {
+        margin-bottom: 1vw;
+    }
+    h6 {
+        width: 7vw;
+    }
+    .wrap-right {
+        width: calc(100% - 7vw);
+    }
+}

@@ -1,0 +1,10 @@
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+    .iconfont {
+        font-size: 1.6rem;
+        margin-right: 0.6vw;
+    }
+}

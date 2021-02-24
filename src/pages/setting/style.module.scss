@@ -1,0 +1,393 @@
+@import '../../assets/styles/theme.scss';
+
+.wrap {
+    margin-bottom: 5vw;
+    &:first-child {
+        margin-bottom: 7vw;
+    }
+    .title-module {
+        margin-bottom: 2vw;
+        display: flex;
+        justify-content: space-between;
+        h3 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            padding-left: 1.2vw;
+            border-left: 0.3vw solid $app-fontColor;
+        }
+    }
+    // 博客首页-配图
+    .home-wrap {
+        display: flex;
+        .item-wrap {
+            position: relative;
+            &:not(:last-child) {
+                margin-right: 2vw;
+            }
+            h6 {
+                position: absolute;
+                bottom: -2vw;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .upload-box {
+                width: 12vw;
+                height: 8vw;
+                background-color: $upload-multiple-background;
+                border: 0.05vw dashed $border-color;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.2s linear 0s;
+                &:hover {
+                    transition: all 0.2s linear 0s;
+                    border-color: $app-fontColor-active;
+                    .icon-add2 {
+                        transition: all 0.2s linear 0s;
+                        color: $app-fontColor-active;
+                    }
+                }
+                .icon-add2 {
+                    transition: all 0.2s linear 0s;
+                    color: $upload-multiple-iconColor;
+                    font-size: 5rem;
+                }
+            }
+            .image-wrap {
+                position: relative;
+                width: 12vw;
+                height: 8vw;
+                background: $album-modal-upload-background;
+                .cover-image {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                }
+                &:hover {
+                    .delete-mask {
+                        opacity: 1;
+                        transition: opacity 0.3s ease-in-out 0s;
+                    }
+                }
+                .delete-mask {
+                    z-index: 2;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out 0s;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $app-mask-background;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .icon-delete {
+                        color: $app-mask-iconColor;
+                        cursor: pointer;
+                        font-size: 5rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    // 友情链接
+    .link-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        .link-item {
+            position: relative;
+            margin-right: 1.2vw;
+            margin-bottom: 1.2vw;
+            a {
+                display: inline-block;
+                text-align: center;
+                padding: 0.2vw 0.5vw;
+                position: relative;
+                border-radius: 0.2rem;
+                border: 0.1vw dashed $border-color;
+                color: $app-fontColor;
+                &:hover {
+                    color: $app-fontColor-active;
+                    border-color: $app-fontColor-active;
+                }
+            }
+            .icon-error {
+                position: absolute;
+                right: -0.4vw;
+                top: -0.4vw;
+                font-size: 1.6rem;
+                &:hover {
+                    color: $app-fontColor-active;
+                    cursor: pointer;
+                }
+            }
+        }
+        .add-wrap {
+            width: 1.6vw;
+            height: 1.6vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            padding: 0.2vw;
+            border: 0.1vw solid $border-color;
+            .icon-add2 {
+                font-weight: bold;
+                font-size: 1.6rem;
+            }
+            &:hover {
+                border-color: $app-fontColor-active;
+                cursor: pointer;
+                .icon-add2 {
+                    color: $app-fontColor-active;
+                }
+            }
+        }
+    }
+    // 轮播图
+    .carsouel-wrap {
+        display: flex;
+        .upload-box {
+            width: 12vw;
+            height: 8vw;
+            background-color: $upload-multiple-background;
+            border: 0.05vw dashed $border-color;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s linear 0s;
+            &:hover {
+                transition: all 0.2s linear 0s;
+                border-color: $app-fontColor-active;
+                .icon-add2 {
+                    transition: all 0.2s linear 0s;
+                    color: $app-fontColor-active;
+                }
+            }
+            .icon-add2 {
+                transition: all 0.2s linear 0s;
+                color: $upload-multiple-iconColor;
+                font-size: 5rem;
+            }
+        }
+        .image-box {
+            position: relative;
+            width: 12vw;
+            height: 8vw;
+            background-color: $upload-multiple-background;
+            margin-right: 2vw;
+            border: 0.05vw dashed $border-color;
+            .cover-image {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 2;
+                max-width: 100%;
+                max-height: 100%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            &:hover {
+                .delete-mask {
+                    opacity: 1;
+                    transition: opacity 0.3s ease-in-out 0s;
+                }
+            }
+            .delete-mask {
+                z-index: 2;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out 0s;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: $app-mask-background;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon-delete {
+                    color: $app-mask-iconColor;
+                    cursor: pointer;
+                    font-size: 5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    // 评论用户头像配图
+    .comment-headerImg {
+        display: flex;
+        align-items: center;
+        .headerImg-wrap {
+            position: relative;
+            margin-left: 2vw;
+            margin-bottom: 2vw;
+            .info {
+                width: 5vw;
+                height: 5vw;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                .img-wrap {
+                    position: relative;
+                    img {
+                        width: 3.6vw;
+                        height: 3.6vw;
+                        border-radius: 100%;
+                    }
+                    .mask {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 3.6vw;
+                        height: 3.6vw;
+                        border-radius: 100%;
+                        background: $app-mask-background;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        opacity: 0;
+                        transition: all 0.2s linear 0s;
+                        .close {
+                            cursor: pointer;
+                            font-size: 2.4rem;
+                            color: $app-mask-iconColor;
+                        }
+                    }
+                    &:hover {
+                        .mask {
+                            transition: all 0.2s linear 0s;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                p {
+                    width: 5vw;
+                    text-align: center;
+                    font-weight: bolder;
+                    font-size: 1.4rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .add-wrap {
+            width: 4vw;
+            height: 4vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            margin: 0.5vw;
+            border: 0.1vw solid $border-color;
+            box-sizing: content-box;
+            margin-bottom: 2.5vw;
+            .icon-add2 {
+                font-weight: bold;
+                font-size: 3rem;
+            }
+            &:hover {
+                border-color: $app-fontColor-active;
+                cursor: pointer;
+                .icon-add2 {
+                    color: $app-fontColor-active;
+                }
+            }
+        }
+    }
+}
+.title-form-wrap {
+    h6 {
+        font-size: 1.4rem;
+    }
+    &:not(:first-child) {
+        margin-top: 1.2rem;
+    }
+}
+// 用户头像配置弹窗
+.commentHeaderImg-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .commentHeaderImg-upload-box {
+        width: 3.6vw;
+        height: 3.6vw;
+        background-color: $upload-multiple-background;
+        border: 0.05vw dashed $border-color;
+        border-radius: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s linear 0s;
+        margin-right: 2vw;
+        &:hover {
+            transition: all 0.2s linear 0s;
+            border-color: $app-fontColor-active;
+            .icon-add2 {
+                transition: all 0.2s linear 0s;
+                color: $app-fontColor-active;
+            }
+        }
+        .icon-add2 {
+            transition: all 0.2s linear 0s;
+            color: $upload-multiple-iconColor;
+            font-size: 5rem;
+        }
+    }
+    .input-wrap {
+        width: calc(100% - 5.6vw);
+        .title {
+            font-size: 1.4rem;
+            margin-bottom: 0.6vw;
+        }
+    }
+    .img-wrap {
+        position: relative;
+        width: 3.6vw;
+        height: 3.6vw;
+        border-radius: 100%;
+        overflow: hidden;
+        margin-right: 2vw;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .img-mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s linear 0s;
+            background: $app-mask-background;
+            .close {
+                cursor: pointer;
+                font-size: 2.4rem;
+                color: $app-mask-iconColor;
+            }
+        }
+        &:hover {
+            .img-mask {
+                opacity: 1;
+                transition: all 0.2s linear 0s;
+            }
+        }
+    }
+}

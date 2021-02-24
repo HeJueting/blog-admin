@@ -1,0 +1,73 @@
+@import '../../assets/styles/theme.scss';
+
+.user-cloud {
+    // 右键菜单
+    .react-contextmenu {
+        z-index: 999;
+        background: $cloud-rightMenu-background;
+        border: 0.05vw solid $border-color;
+        color: $cloud-rightMenu-fontColor;
+        box-shadow: 0 0 0.3vw $boxshadow-color;
+        .react-contextmenu-item {
+            min-width: 4vw;
+            text-align: center;
+            line-height: 2vw;
+            cursor: pointer;
+            &:hover {
+                background: $cloud-rightMenu-item-background-active;
+                color: $app-fontColor-active;
+            }
+        }
+        .react-contextmenu-item--disabled {
+            cursor: not-allowed;
+            color: $cloud-rightMenu-disabled-fontColor;
+            &:hover {
+                background: $cloud-rightMenu-background;
+                color: $cloud-rightMenu-disabled-fontColor;
+            }
+        }
+    }
+    // 中间内容
+    .resource-box {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: calc(100vh - 15vw);
+        padding: 1.6vw 0 0 0;
+        .react-contextmenu-wrapper {
+            width: 5vw;
+            height: 4.2vw;
+            .resource-wrap {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                width: 5vw;
+                height: 4.2vw;
+                &:hover {
+                    opacity: 0.8;
+                }
+                .icon-wenjianjia {
+                    font-size: 5.4rem;
+                    color: $cloud-folder-color;
+                }
+                .icon-wenjian {
+                    padding-top: 0.5rem;
+                    font-size: 4.6rem;
+                    color: $cloud-file-color;
+                }
+                span {
+                    display: block;
+                    width: 4vw;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            .folder-wrap {
+                cursor: pointer;
+            }
+        }
+    }
+}

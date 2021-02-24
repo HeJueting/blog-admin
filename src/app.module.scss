@@ -1,0 +1,22 @@
+@import './assets/styles/theme.scss';
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+
+    .app-wrap {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+
+        .app-wrap-left {
+            width: 15.625vw;
+            background: $navBar-background;
+        }
+
+        .app-wrap-right {
+            width: 84.375vw;
+        }
+    }
+}

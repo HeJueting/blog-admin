@@ -1,0 +1,125 @@
+@import '../../assets/styles/theme.scss';
+
+.form-upload {
+    // 多文件上传
+    .form-upload-multiple {
+        display: flex;
+        flex-wrap: wrap;
+        .upload-box {
+            width: 6vw;
+            height: 6vw;
+            margin: 1vw;
+            background-color: $upload-multiple-background;
+            border: 0.05vw dashed $border-color;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s linear 0s;
+            &:hover {
+                transition: all 0.2s linear 0s;
+                border-color: $app-fontColor-active;
+                .icon-add2 {
+                    transition: all 0.2s linear 0s;
+                    color: $app-fontColor-active;
+                }
+            }
+            .icon-add2 {
+                transition: all 0.2s linear 0s;
+                color: $upload-multiple-iconColor;
+                font-size: 5rem;
+            }
+        }
+        .file-item,
+        .image-item {
+            margin: 1vw;
+            position: relative;
+        }
+        // 文件上传
+        .file-item {
+            .item-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                height: 6vw;
+                span {
+                    width: 5vw;
+                    display: block;
+                    font-size: 1.2rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-align: center;
+                }
+            }
+            .file-box {
+                .icon-wenjian {
+                    font-size: 4.2vw;
+                    color: $upload-multiple-fileColor;
+                }
+            }
+            .error-box {
+                border: 0.05vw solid $upload-multiple-errorColor;
+                border-radius: 0.2vw;
+                justify-content: center;
+                .icon-error {
+                    font-size: 2vw;
+                    color: $upload-multiple-errorColor;
+                    margin-bottom: 1vw;
+                }
+            }
+            .loading-box {
+                width: 5vw;
+                height: 6vw;
+            }
+        }
+        // 图片上传
+        .image-item {
+            .image-box {
+                width: 6vw;
+                height: 6vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // background: $upload-multiple-loading-background;
+                img {
+                    display: block;
+                    max-height: 6vw;
+                    max-width: 6vw;
+                }
+            }
+            .loading-box {
+                width: 6vw;
+                height: 6vw;
+            }
+        }
+        // loading动画
+        .loading-box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $upload-multiple-loading-background;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .icon-loading {
+                animation: loading-roller 1.2s linear infinite;
+                color: $upload-multiple-loading-color;
+                font-size: 3.2rem;
+            }
+            @keyframes loading-roller {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        .ant-upload-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

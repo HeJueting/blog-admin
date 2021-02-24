@@ -1,0 +1,10 @@
+@import '../../assets/styles/theme.scss';
+
+.main {
+    position: relative;
+    margin: 1.6vw 1.6vw 0 1.6vw;
+    padding: 2vw;
+    min-height: calc(100% - 8vw);
+    box-sizing: border-box;
+    background: $router-background;
+}

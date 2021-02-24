@@ -1,0 +1,24 @@
+@import '../../../assets/styles/theme.scss';
+
+.router-tips {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    .tips-item {
+        position: relative;
+        margin-right: 2vw;
+        color: $header-tips-color;
+        &:not(:last-child) {
+            &::after {
+                position: absolute;
+                content: '›';
+                top: 0;
+                right: -1.2vw;
+            }
+        }
+        &:last-child {
+            color: $header-tips-active-color;
+            font-weight: bolder;
+        }
+    }
+}

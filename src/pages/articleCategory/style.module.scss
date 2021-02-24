@@ -1,0 +1,32 @@
+@import '../../assets/styles/theme.scss';
+
+// 分类头部
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vw;
+    .btn {
+        line-height: 1;
+        .icon {
+            font-size: 1.2rem;
+            margin-right: 0.5vw;
+        }
+    }
+}
+
+.tree-title {
+    display: flex;
+    justify-content: space-between;
+    height: 2.8vw;
+    line-height: 2.8vw;
+    h6 {
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+}
+
+.ant-tree-switcher {
+    width: 1.25vw;
+    line-height: 1.6;
+}

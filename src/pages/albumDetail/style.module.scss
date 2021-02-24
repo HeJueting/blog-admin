@@ -1,0 +1,71 @@
+@import '../../assets/styles/theme.scss';
+
+.photo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1vw;
+    border-bottom: 0.05vw solid $border-color;
+    .header-left {
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        .iconfont {
+            font-size: 2.4rem;
+            margin-right: 0.6vw;
+            font-weight: bold;
+        }
+        &:hover {
+            cursor: pointer;
+            color: $app-fontColor-active;
+        }
+    }
+}
+.photo-wrap {
+    padding: 2vw 2vw 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    .image-box {
+        position: relative;
+        .image-wrap {
+            width: 8vw;
+            height: 8vw;
+            margin-right: 1.5vw;
+            margin-bottom: 1.5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $photo-background;
+            img {
+                max-width: 8vw;
+                max-height: 8vw;
+            }
+        }
+        .delete-wrap {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 8vw;
+            height: 8vw;
+            background: $app-mask-background;
+            opacity: 0;
+            transition: opacity 0.2s linear 0s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+                opacity: 1;
+                transition: opacity 0.3s linear 0s;
+            }
+            .iconfont {
+                cursor: pointer;
+                font-size: 3rem;
+                color: $app-mask-iconColor;
+                &:first-child {
+                    margin-right: 1vw;
+                }
+            }
+        }
+    }
+}

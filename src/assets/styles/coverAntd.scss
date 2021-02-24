@@ -1,0 +1,152 @@
+@import './theme.scss';
+
+// 导航栏
+.ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+    color: $navBar-color;
+    background: $navBar-background;
+}
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-submenu-active,
+.ant-menu-dark .ant-menu-submenu-open,
+.ant-menu-dark .ant-menu-submenu-selected,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+    color: $navBar-hover-color;
+}
+.ant-menu-dark .ant-menu-item:hover > a,
+.ant-menu-dark .ant-menu-item-active > a,
+.ant-menu-dark .ant-menu-submenu-active > a,
+.ant-menu-dark .ant-menu-submenu-open > a,
+.ant-menu-dark .ant-menu-submenu-selected > a,
+.ant-menu-dark .ant-menu-submenu-title:hover > a,
+.ant-menu-dark .ant-menu-item:hover > span > a,
+.ant-menu-dark .ant-menu-item-active > span > a,
+.ant-menu-dark .ant-menu-submenu-active > span > a,
+.ant-menu-dark .ant-menu-submenu-open > span > a,
+.ant-menu-dark .ant-menu-submenu-selected > span > a,
+.ant-menu-dark .ant-menu-submenu-title:hover > span > a {
+    color: $navBar-hover-color;
+}
+.ant-menu-dark
+    .ant-menu-item:hover
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-item-active
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-active
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-open
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-selected
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-item:hover
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-item-active
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-active
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-open
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-selected
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::after,
+.ant-menu-dark
+    .ant-menu-item:hover
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-item-active
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-active
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-open
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-selected
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-item:hover
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-item-active
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-active
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-open
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-selected
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::before,
+.ant-menu-dark
+    .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-title:hover
+    > .ant-menu-submenu-arrow::before {
+    background: $navBar-hover-color;
+    color: $navBar-hover-color;
+    transition: none;
+}
+.ant-menu.ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow,
+.ant-menu-dark .ant-menu-sub .ant-menu-submenu-title .ant-menu-submenu-arrow,
+.ant-menu.ant-menu-dark
+    .ant-menu-sub
+    .ant-menu-submenu-title
+    .ant-menu-submenu-arrow {
+    transition: none;
+}
+.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+    background: $navBar-expend-background;
+}
+.ant-menu-inline .ant-menu-submenu-title {
+    padding-left: 1.6rem !important;
+}
+.ant-menu-sub.ant-menu-inline > .ant-menu-item,
+.ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    padding-left: 3.2rem !important;
+}
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: $navBar-item-active;
+}

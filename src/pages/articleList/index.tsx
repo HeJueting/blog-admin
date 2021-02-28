@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import style from './style.module.scss';
+import lodash from '../../utils/lodash';
 import { useHistory } from 'react-router-dom';
+import { timeFormat } from '../../utils/help';
 import articleAxios from '../../api/article';
 import articleCategoryAxios from '../../api/articleCategory';
-import { timeFormat } from '../../utils/help';
-import lodash from '../../utils/lodash';
+// 组件
 import { Select, Input, Pagination, InputNumber, Table, Modal } from 'antd';
+// 接口
+import { IArticleList } from '../../typing/api/article';
 
 const ArticleList: React.FC = () => {
     // 文章列表数据
@@ -87,13 +90,11 @@ const ArticleList: React.FC = () => {
                             max={1000}
                             defaultValue={data.sort}
                             onChange={(value: any) => {
+                                setHisSort(data.sort);
                                 onSetWeight(value, data);
                             }}
                             onBlur={async () => {
                                 await onBlur(data);
-                            }}
-                            onFocus={() => {
-                                onFocus(data);
                             }}
                         />
                     </div>
@@ -102,13 +103,13 @@ const ArticleList: React.FC = () => {
         },
     ];
     const [dataSource, setDataSource] = useState([]);
-    // 文章分类
+    // 文章分类，all代表所有分类的文章
     const [categoryList, setCategoryList] = useState([]);
     const [category, setCategory] = useState('all');
-    // 文章状态
+    // 文章状态，exist代表草稿和已发布状态的文章
     const stateList = [
         {
-            value: 'all',
+            value: 'exist',
             name: '全部（状态）',
         },
         {
@@ -120,7 +121,7 @@ const ArticleList: React.FC = () => {
             name: '已发布',
         },
     ];
-    const [state, setState] = useState('all');
+    const [state, setState] = useState('exist');
     // 排序
     const sortList = [
         {
@@ -166,14 +167,17 @@ const ArticleList: React.FC = () => {
     // 初始化文章列表
     const initDataSource = async () => {
         // 查询数据
-        const res = await articleAxios.list({
+        const condition: IArticleList = {
             keyword,
             page,
             pageSize,
             sort,
-            state: state === 'all' ? '' : state,
-            category: category === 'all' ? '' : category,
-        });
+            state,
+        };
+        if (category !== 'all') {
+            condition.categoryId = category;
+        }
+        const res = await articleAxios.list(condition);
 
         // 查询数据成功
         if (res.code === 0) {
@@ -268,11 +272,6 @@ const ArticleList: React.FC = () => {
             // 更新数据
             initDataSource();
         }
-    };
-
-    // 权重设置输入框获取焦点
-    const onFocus = (data: any) => {
-        setHisSort(data.sort);
     };
 
     // 点击编辑文章

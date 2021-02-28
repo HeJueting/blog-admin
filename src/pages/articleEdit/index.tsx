@@ -6,7 +6,7 @@ import CONFIG from '../../config';
 import { timeFormat } from '../../utils/help';
 import articleAxios from '../../api/article';
 import articleCategoryAxios from '../../api/articleCategory';
-
+// 组件
 import Upload from '../../components/upload';
 import Editor from '../../components/editor';
 import Icon from '../../components/icon';
@@ -154,11 +154,6 @@ const ArticleEdit: React.FC = () => {
                 history.push('/article/list', null);
             }
         }
-    };
-
-    // 取消
-    const cancel = () => {
-        history.push('/article/list', null);
     };
 
     // 背景图片的展示
@@ -341,7 +336,12 @@ const ArticleEdit: React.FC = () => {
                 >
                     文章发布
                 </Button>
-                <Button onClick={cancel} size="large">
+                <Button
+                    onClick={() => {
+                        history.push('/article/list', null);
+                    }}
+                    size="large"
+                >
                     取消
                 </Button>
             </div>

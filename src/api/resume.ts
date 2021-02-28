@@ -5,7 +5,7 @@ const resumeAxios = {
     search: () =>
         Axios({
             method: 'get',
-            url: '/resume/admin/search',
+            url: '/resume/frontend/search',
         }),
     // 更新简历信息
     update: (data: any) =>

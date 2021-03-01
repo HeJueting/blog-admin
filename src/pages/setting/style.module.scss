@@ -15,6 +15,11 @@
             padding-left: 1.2vw;
             border-left: 0.3vw solid $app-fontColor;
         }
+        .btn-wrap {
+            .btn {
+                margin-right: 2vw;
+            }
+        }
     }
     // 博客首页-配图
     .home-wrap {
@@ -307,7 +312,29 @@
             }
         }
     }
+    // 主题配置
+    .theme-wrap {
+        display: flex;
+        align-items: center;
+        .theme-box {
+            position: relative;
+            width: 5vw;
+            margin-right: 2vw;
+            h4 {
+                width: 5vw;
+                height: 3vw;
+                list-style: 3vw;
+                text-align: center;
+            }
+            .operate-wrap {
+                width: 5vw;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
 }
+
 .title-form-wrap {
     h6 {
         font-size: 1.4rem;

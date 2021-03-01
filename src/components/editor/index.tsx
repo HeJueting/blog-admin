@@ -4,7 +4,6 @@ import './braft-editor.css';
 import './code-highlighter.css';
 import CONFIG from '../../config';
 import localForage from 'localforage';
-import { EditorColors } from '../../assets/styles/theme';
 // editor编辑器扩展
 import BraftEditor from 'braft-editor';
 import CodeHighlighter from 'braft-extensions/dist/code-highlighter';
@@ -14,6 +13,28 @@ import 'prismjs/components/prism-jsx.js';
 import 'prismjs/components/prism-less.js';
 import 'prismjs/components/prism-json.js';
 
+// 色彩配置
+const EditorColors = [
+    '#fff',
+    '#f5f5f5',
+    '#d9d9d9',
+    '#bfbfbf',
+    '#8c8c8c',
+    '#595959',
+    '#262626',
+    '#141414',
+    '#000',
+    '#E8684A',
+    '#5B8FF9',
+    '#F6BD16',
+    '#5AD8A6',
+    '#9270CA',
+    '#FF99C3',
+    '#6DC8EC',
+    '#FF9D4D',
+    '#269A99',
+    '#5D7092',
+];
 // 编写关键字扩展模块
 const keyWordExtension = {
     // 指定扩展类型

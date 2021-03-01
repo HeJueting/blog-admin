@@ -6,6 +6,7 @@ import Links from './links';
 import Locations from './locations';
 import CarouselImage from './carsouelImage';
 import CommentHeaderImg from './commentHeaderImg';
+import Theme from './theme';
 
 const Setting: React.FC = () => {
     // 设置表的_id
@@ -27,6 +28,7 @@ const Setting: React.FC = () => {
             <Links data={settingRes.data} />
             <Locations />
             <CommentHeaderImg data={settingRes.data} />
+            <Theme data={settingRes.data} />
         </>
     );
 };

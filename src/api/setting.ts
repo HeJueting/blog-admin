@@ -1,5 +1,8 @@
 import Axios from '../utils/axios';
 
+interface IObj {
+    [key: string]: any;
+}
 interface IUpdate {
     _id: string;
     data: {
@@ -20,6 +23,8 @@ interface IUpdate {
             name: string;
             img: string;
         }[];
+        //博客主题配置
+        themeConfig?: IObj;
     };
 }
 

@@ -30,8 +30,8 @@ img {
 }
 
 body {
-    color: $app-fontColor;
-    background: $app-background;
+    color: $font-color;
+    background: $background;
     font-size: 1.4rem;
 }
 
@@ -122,7 +122,7 @@ h6 {
             margin-right: 1vw;
         }
         &:hover {
-            color: $app-fontColor-active;
+            color: $font-hover-color;
         }
     }
     .ant-input-number-handler {
@@ -140,7 +140,7 @@ h6 {
     font-size: 2.4rem;
     font-weight: bold;
     padding-left: 1.2vw;
-    border-left: 0.3vw solid $app-fontColor;
+    border-left: 0.3vw solid $font-color;
 }
 
 // 表格操作
@@ -156,7 +156,7 @@ h6 {
     .operate-span {
         margin: 0 0.5vw;
         &:hover {
-            color: $app-fontColor-active;
+            color: $font-hover-color;
             cursor: pointer;
         }
     }
@@ -164,7 +164,7 @@ h6 {
         .operate-span {
             &:hover {
                 cursor: initial;
-                color: $app-fontColor;
+                color: $font-hover-color;
             }
         }
     }

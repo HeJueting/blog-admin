@@ -18,10 +18,10 @@
             transition: all 0.2s linear 0s;
             &:hover {
                 transition: all 0.2s linear 0s;
-                border-color: $app-fontColor-active;
+                border-color: $font-hover-color;
                 .icon-add2 {
                     transition: all 0.2s linear 0s;
-                    color: $app-fontColor-active;
+                    color: $font-hover-color;
                 }
             }
             .icon-add2 {

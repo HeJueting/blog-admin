@@ -98,7 +98,7 @@
     box-shadow: 0 0.1vw 0.15vw $boxshadow-color;
     &:hover {
         cursor: pointer;
-        background: #40a9ff;
+        background: $album-add-icon-background-active;
     }
     .icon-add1 {
         font-size: 2rem;

@@ -18,7 +18,7 @@
         }
         &:hover {
             cursor: pointer;
-            color: $app-fontColor-active;
+            color: $font-hover-color;
         }
     }
 }
@@ -48,7 +48,7 @@
             top: 0;
             width: 8vw;
             height: 8vw;
-            background: $app-mask-background;
+            background: $mask-background;
             opacity: 0;
             transition: opacity 0.2s linear 0s;
             display: flex;
@@ -61,7 +61,7 @@
             .iconfont {
                 cursor: pointer;
                 font-size: 3rem;
-                color: $app-mask-iconColor;
+                color: $mask-font-color;
                 &:first-child {
                     margin-right: 1vw;
                 }

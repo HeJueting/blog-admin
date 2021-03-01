@@ -1,13 +1,13 @@
 // 网页样式
-$app-background: #f5f5f5;
-$app-fontColor: #333;
-$app-fontColor-active: #1890ff;
+$background: #f5f5f5;
+$font-color: #333;
+$font-hover-color: #1890ff;
 $border-color: #d9d9d9;
 $icon-color: #bfbfbf;
 $split-color: #bfbfbf;
 $boxshadow-color: rgba(0, 0, 0, 0.2);
-$app-mask-background: rgba(0, 0, 0, 0.6);
-$app-mask-iconColor: #fff;
+$mask-background: rgba(0, 0, 0, 0.6);
+$mask-font-color: #fff;
 
 // 全局loading
 $loading-background: rgba(0, 0, 0, 0.85);
@@ -44,7 +44,6 @@ $cloud-rightMenu-item-background-active: #f5f5f5;
 $cloud-rightMenu-disabled-fontColor: #bfbfbf;
 // 查看文件的弹窗
 $cloud-fileCheckModal-background: #f5f5f5;
-$app-fontColor-active-active: #40a9ff;
 
 // 多文件上传
 $upload-multiple-background: #f5f5f5;

@@ -70,12 +70,12 @@
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background: $app-mask-background;
+                background: $mask-background;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 .icon-delete {
-                    color: $app-mask-iconColor;
+                    color: $mask-font-color;
                     cursor: pointer;
                     font-size: 5rem;
                     cursor: pointer;

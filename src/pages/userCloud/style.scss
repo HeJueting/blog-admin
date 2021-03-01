@@ -15,7 +15,7 @@
             cursor: pointer;
             &:hover {
                 background: $cloud-rightMenu-item-background-active;
-                color: $app-fontColor-active;
+                color: $font-hover-color;
             }
         }
         .react-contextmenu-item--disabled {

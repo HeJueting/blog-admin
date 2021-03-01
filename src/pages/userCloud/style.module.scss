@@ -14,7 +14,7 @@
             font-size: 1.6rem;
             cursor: pointer;
             &:hover {
-                color: $app-fontColor-active;
+                color: $font-hover-color;
             }
         }
         .lastName {
@@ -82,10 +82,9 @@
 .fileCheck-copy-wrap {
     text-align: right;
     margin-top: 0.3vw;
-    color: $app-fontColor-active;
     cursor: pointer;
     &:hover {
-        color: $app-fontColor-active-active;
+        color: $font-hover-color;
     }
 }
 .user-cloud-fileCheck-modal {

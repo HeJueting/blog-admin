@@ -13,7 +13,7 @@
             font-size: 2.2rem;
             font-weight: bold;
             padding-left: 1.2vw;
-            border-left: 0.3vw solid $app-fontColor;
+            border-left: 0.3vw solid $font-color;
         }
         .btn-wrap {
             .btn {
@@ -48,10 +48,10 @@
                 transition: all 0.2s linear 0s;
                 &:hover {
                     transition: all 0.2s linear 0s;
-                    border-color: $app-fontColor-active;
+                    border-color: $font-hover-color;
                     .icon-add2 {
                         transition: all 0.2s linear 0s;
-                        color: $app-fontColor-active;
+                        color: $font-hover-color;
                     }
                 }
                 .icon-add2 {
@@ -88,12 +88,12 @@
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    background: $app-mask-background;
+                    background: $mask-background;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     .icon-delete {
-                        color: $app-mask-iconColor;
+                        color: $mask-font-color;
                         cursor: pointer;
                         font-size: 5rem;
                         cursor: pointer;
@@ -117,10 +117,10 @@
                 position: relative;
                 border-radius: 0.2rem;
                 border: 0.1vw dashed $border-color;
-                color: $app-fontColor;
+                color: $font-color;
                 &:hover {
-                    color: $app-fontColor-active;
-                    border-color: $app-fontColor-active;
+                    color: $font-hover-color;
+                    border-color: $font-hover-color;
                 }
             }
             .icon-error {
@@ -129,7 +129,7 @@
                 top: -0.4vw;
                 font-size: 1.6rem;
                 &:hover {
-                    color: $app-fontColor-active;
+                    color: $font-hover-color;
                     cursor: pointer;
                 }
             }
@@ -148,10 +148,10 @@
                 font-size: 1.6rem;
             }
             &:hover {
-                border-color: $app-fontColor-active;
+                border-color: $font-hover-color;
                 cursor: pointer;
                 .icon-add2 {
-                    color: $app-fontColor-active;
+                    color: $font-hover-color;
                 }
             }
         }
@@ -171,10 +171,10 @@
             transition: all 0.2s linear 0s;
             &:hover {
                 transition: all 0.2s linear 0s;
-                border-color: $app-fontColor-active;
+                border-color: $font-hover-color;
                 .icon-add2 {
                     transition: all 0.2s linear 0s;
-                    color: $app-fontColor-active;
+                    color: $font-hover-color;
                 }
             }
             .icon-add2 {
@@ -214,12 +214,12 @@
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background: $app-mask-background;
+                background: $mask-background;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 .icon-delete {
-                    color: $app-mask-iconColor;
+                    color: $mask-font-color;
                     cursor: pointer;
                     font-size: 5rem;
                     cursor: pointer;
@@ -257,7 +257,7 @@
                         width: 3.6vw;
                         height: 3.6vw;
                         border-radius: 100%;
-                        background: $app-mask-background;
+                        background: $mask-background;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -266,7 +266,7 @@
                         .close {
                             cursor: pointer;
                             font-size: 2.4rem;
-                            color: $app-mask-iconColor;
+                            color: $mask-font-color;
                         }
                     }
                     &:hover {
@@ -304,10 +304,10 @@
                 font-size: 3rem;
             }
             &:hover {
-                border-color: $app-fontColor-active;
+                border-color: $font-hover-color;
                 cursor: pointer;
                 .icon-add2 {
-                    color: $app-fontColor-active;
+                    color: $font-hover-color;
                 }
             }
         }
@@ -362,10 +362,10 @@
         margin-right: 2vw;
         &:hover {
             transition: all 0.2s linear 0s;
-            border-color: $app-fontColor-active;
+            border-color: $font-hover-color;
             .icon-add2 {
                 transition: all 0.2s linear 0s;
-                color: $app-fontColor-active;
+                color: $font-hover-color;
             }
         }
         .icon-add2 {
@@ -403,11 +403,11 @@
             justify-content: center;
             align-items: center;
             transition: all 0.2s linear 0s;
-            background: $app-mask-background;
+            background: $mask-background;
             .close {
                 cursor: pointer;
                 font-size: 2.4rem;
-                color: $app-mask-iconColor;
+                color: $mask-font-color;
             }
         }
         &:hover {

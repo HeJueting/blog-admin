@@ -318,18 +318,29 @@
         align-items: center;
         .theme-box {
             position: relative;
-            width: 5vw;
+            width: 8vw;
             margin-right: 2vw;
+            border: 0.05vw solid $border-color;
             h4 {
-                width: 5vw;
-                height: 3vw;
-                list-style: 3vw;
+                color: $font-hover-color;
+                width: 8vw;
+                height: 4vw;
+                line-height: 4vw;
                 text-align: center;
+                border-bottom: 0.05vw solid $border-color;
             }
             .operate-wrap {
-                width: 5vw;
+                padding: 0.5vw 0;
+                width: 8vw;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
+                span {
+                    font-size: 1.2rem;
+                    &:hover {
+                        color: $font-hover-color;
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }
@@ -415,6 +426,15 @@
                 opacity: 1;
                 transition: all 0.2s linear 0s;
             }
+        }
+    }
+}
+// 博客主题配置
+.themenConfig-modal {
+    .obj-wrap {
+        margin-top: 1vw;
+        .textarea {
+            resize: none;
         }
     }
 }

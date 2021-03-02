@@ -146,7 +146,6 @@ const Locations: React.FC = () => {
                 const res = await locationAxios.delete({
                     id: data._id,
                 });
-                console.log(res);
                 if (res.code === 0) {
                     initDataSource();
                     window.$message.success(res.msg);

@@ -35,7 +35,6 @@ const AlbumDetail: React.FC = () => {
 
     // 初始化页面数据
     const initDataSource = async () => {
-        console.log('albumInfo', albumInfo);
         const res = await photoAxios.searchList({
             albumId: albumInfo._id,
         });
@@ -61,7 +60,6 @@ const AlbumDetail: React.FC = () => {
 
     // 点击删除照片
     const clickDeletePhoto = (data: any) => {
-        console.log('打印data：', data);
         Modal.confirm({
             title: '是否删除该照片',
             onOk: async () => {

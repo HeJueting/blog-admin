@@ -112,7 +112,6 @@ const Theme: React.FC<ICarsouelImageProps> = ({ data }) => {
         } catch (e) {
             isRight = false;
         }
-        console.log(isRight);
         return isRight;
     };
 

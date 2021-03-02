@@ -86,11 +86,12 @@ const Avatar: React.FC = () => {
         setExTimeNum(0);
     };
 
+    // 菜单列表
     const menuList = [
         {
             name: `新消息${`（${news}）`}`,
             icon: 'icon-xiaoxi',
-            style: news > 0 ? 'red' : {},
+            style: news > 0 ? { color: 'red' } : {},
             click: async () => {
                 await userAxios.resetNews();
                 setNews(0);
@@ -121,25 +122,30 @@ const Avatar: React.FC = () => {
         },
     ];
 
-    const menu = (
-        <Menu>
-            {menuList.map((item) => (
-                <Menu.Item
-                    style={item.style || {}}
-                    className={style['avatar-menu-item']}
-                    key={`avatar-menu-${item.icon}`}
-                    onClick={item.click}
-                >
-                    <Icon type={item.icon} className={style['iconfont']} />
-                    <span>{item.name}</span>
-                </Menu.Item>
-            ))}
-        </Menu>
-    );
-
     return (
         <>
-            <Dropdown overlay={menu} placement="bottomRight" arrow>
+            <Dropdown
+                overlay={() => (
+                    <Menu>
+                        {menuList.map((item) => (
+                            <Menu.Item
+                                style={item.style || {}}
+                                className={style['avatar-menu-item']}
+                                key={`avatar-menu-${item.icon}`}
+                                onClick={item.click}
+                            >
+                                <Icon
+                                    type={item.icon}
+                                    className={style['iconfont']}
+                                />
+                                <span>{item.name}</span>
+                            </Menu.Item>
+                        ))}
+                    </Menu>
+                )}
+                placement="bottomRight"
+                arrow
+            >
                 <div className={style['header-avatar']}>
                     {headImg ? (
                         <img src={headImg} alt="" />

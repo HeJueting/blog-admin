@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import style from '../style.module.scss';
+import Prism from 'prismjs';
 import lodash from '../../../utils/lodash';
 import CONFIG from '../../../config';
 import settingAxios from '../../../api/setting';
 
 import { Button, Modal, Input, message } from 'antd';
+import ReactJson from 'react-json-view';
 import Icon from '../../../components/icon';
 
 // 接口：props
@@ -92,23 +94,30 @@ const Theme: React.FC<ICarsouelImageProps> = ({ data }) => {
     };
     // 确认编辑、添加主题
     const onOk = () => {
-        let isError = false;
-        try {
-            JSON.parse(obj);
-        } catch (e) {
-            isError = true;
-        }
         // 判断json解析是否有错
-        if (isError) {
-            message.error('json解析错误');
-        } else {
+        if (checkObjRight()) {
             if (operation === 'create') {
                 themeConfig[name] = JSON.parse(obj);
             } else {
                 themeConfig[editTheme] = JSON.parse(obj);
             }
             onCancel();
+        } else {
+            message.error('json解析错误');
         }
+    };
+
+    // 校验obj是否为合格的json数据
+    const checkObjRight = () => {
+        let isRight;
+        try {
+            JSON.parse(obj);
+            isRight = true;
+        } catch (e) {
+            isRight = false;
+        }
+        console.log(isRight);
+        return isRight;
     };
 
     return (
@@ -158,6 +167,7 @@ const Theme: React.FC<ICarsouelImageProps> = ({ data }) => {
 
             {/* 弹窗 */}
             <Modal
+                width="80%"
                 title={`${operation === 'create' ? '新增' : '编辑'}主题配置`}
                 visible={visible}
                 onOk={onOk}
@@ -179,15 +189,29 @@ const Theme: React.FC<ICarsouelImageProps> = ({ data }) => {
                             value={obj}
                             placeholder="请添加主题配置信息"
                             onChange={(e) => {
-                                setObj(e.target.value);
                                 try {
-                                    JSON.parse(obj);
+                                    JSON.parse(e.target.value);
                                 } catch (e) {
                                     message.error(`json解析错误: ${e}`);
                                 }
+                                setObj(e.target.value);
                             }}
-                            rows={4}
+                            rows={16}
                         />
+                        {checkObjRight() ? (
+                            <div className={style['json-wrap']}>
+                                <ReactJson
+                                    displayDataTypes={false}
+                                    enableClipboard={false}
+                                    displayObjectSize={false}
+                                    src={JSON.parse(obj)}
+                                />
+                            </div>
+                        ) : (
+                            <div className={style['error-json-wrap']}>
+                                json解析错误
+                            </div>
+                        )}
                     </div>
                 </div>
             </Modal>

@@ -433,8 +433,25 @@
 .themenConfig-modal {
     .obj-wrap {
         margin-top: 1vw;
-        .textarea {
+        display: flex;
+        justify-content: space-between;
+        textarea {
+            width: 50%;
             resize: none;
+            margin-right: 0.3vw;
+        }
+        .json-wrap {
+            width: 50%;
+            margin-left: 0.3vw;
+        }
+        .error-json-wrap {
+            width: 50%;
+            margin-left: 0.3vw;
+            padding: 1vw;
+            box-sizing: border-box;
+            background: $background;
+            border: 0.05vw solid $border-color;
+            margin: 0;
         }
     }
 }

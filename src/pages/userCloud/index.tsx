@@ -58,7 +58,7 @@ const UserCloud: React.FC = () => {
                 }
             });
         } else {
-            res = await minioAxios.searchBucket({});
+            res = await minioAxios.searchBucket();
             res.data.forEach((item: any, index: number) => {
                 res.data[index].folderName = res.data[index].name;
                 res.data[index].bucketName = res.data[index].name;

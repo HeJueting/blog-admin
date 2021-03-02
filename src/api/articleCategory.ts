@@ -1,43 +1,27 @@
 import Axios from '../utils/axios';
-
-// 接口：创建分类
-interface ICreate {
-    description: string;
-    isPublic: boolean;
-    name: string;
-    parentId: string;
-}
-// 接口：更新分类
-interface IUpdate {
-    _id: string;
-    description?: string;
-    isPublic?: boolean;
-    name?: string;
-    parentId?: string;
-    sort?: number;
-}
-// 接口：删除分类
-interface IDelete {
-    _id: string;
-}
+import {
+    IArticleCategoryCreate,
+    IArticleCategoryDelete,
+    IArticleCategoryUpdate,
+} from '../typing/api/articleCategory';
 
 const articleCategoryAxios = {
     // 创建分类
-    create: (data: ICreate) =>
+    create: (data: IArticleCategoryCreate) =>
         Axios({
             method: 'post',
             url: '/articleCategory/admin/create',
             data,
         }),
     // 更新分类
-    update: (data: IUpdate) =>
+    update: (data: IArticleCategoryUpdate) =>
         Axios({
             method: 'post',
             url: '/articleCategory/admin/update',
             data,
         }),
     // 删除分类
-    delete: (params: IDelete) =>
+    delete: (params: IArticleCategoryDelete) =>
         Axios({
             method: 'get',
             url: '/articleCategory/admin/delete',

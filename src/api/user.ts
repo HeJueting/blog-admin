@@ -1,50 +1,5 @@
 import Axios from '../utils/axios';
-
-// 接口：登录
-declare interface IUserLogin {
-    userName: string;
-    password: string;
-}
-// 接口：更新用户信息
-declare interface IUserUpdate {
-    _id: string;
-    data: {
-        headImg?: string;
-        nickName?: string;
-        isMale?: boolean;
-        constellation?: string;
-        birthday?: string;
-        city?: string;
-        email?: string;
-        github?: string;
-        company?: string;
-        job?: string;
-        motto?: string;
-        introduction?: string;
-        hobby?: string[];
-        label?: string[];
-        educationRecord?: {
-            school: string;
-            major: string;
-            diploma: string;
-            startTime: string;
-            endTime: string;
-        }[];
-        workRecord?: {
-            company: string;
-            job: string;
-            location: string;
-            startTime: string;
-            endTime: string;
-        }[];
-        certificateRecord?: {
-            name: string;
-            number: string;
-            time: string;
-            key: string;
-        }[];
-    };
-}
+import { IUserLogin, IUserUpdate, IUserUpdatePass } from '../typing/api/user';
 
 const userAxios = {
     // 登录
@@ -80,7 +35,7 @@ const userAxios = {
             url: '/user/frontend/sendVerifyCode',
         }),
     // 修改密码
-    updatePass: (data: any) =>
+    updatePass: (data: IUserUpdatePass) =>
         Axios({
             method: 'post',
             url: '/user/admin/updatePass',

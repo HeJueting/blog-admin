@@ -1,39 +1,27 @@
 import Axios from '../utils/axios';
-
-// 创建
-interface Icreate {
-    description: string;
-    name: string;
-}
-// 更新
-interface IUpdate {
-    description?: string;
-    sort?: number;
-    name?: string;
-    _id: string;
-}
-// 删除
-interface IDelete {
-    _id: string;
-}
+import {
+    IAlbumCategoryCreate,
+    IAlbumCategoryDelete,
+    IAlbumCategoryUpdate,
+} from '../typing/api/albumCategory';
 
 const albumCategoryAxios = {
     // 创建相册分类
-    create: (data: Icreate) =>
+    create: (data: IAlbumCategoryCreate) =>
         Axios({
             method: 'post',
             url: '/albumCategory/admin/create',
             data,
         }),
     // 更新相册分类信息
-    update: (data: IUpdate) =>
+    update: (data: IAlbumCategoryUpdate) =>
         Axios({
             method: 'post',
             url: '/albumCategory/admin/update',
             data,
         }),
     // 删除相册分类
-    delete: (params: IDelete) =>
+    delete: (params: IAlbumCategoryDelete) =>
         Axios({
             method: 'get',
             url: '/albumCategory/admin/delete',

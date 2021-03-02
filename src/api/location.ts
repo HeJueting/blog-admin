@@ -1,26 +1,9 @@
 import Axios from '../utils/axios';
-
-// 接口：create
-interface ICreate {
-    time: number;
-    name: string;
-    lat: string;
-    lng: string;
-}
-// 接口：update
-interface IUpdate {
-    id: string;
-    data: {
-        time: number;
-        name: string;
-        lat: string;
-        lng: string;
-    };
-}
-// 接口：detele
-interface IDelete {
-    id: string;
-}
+import {
+    ILocationCreate,
+    ILocationUpdate,
+    ILocationDelete,
+} from '../typing/api/location';
 
 const locationAxios = {
     // 获取所有拍摄地点
@@ -30,21 +13,21 @@ const locationAxios = {
             url: '/location/frontend/list',
         }),
     // 新增拍摄地点
-    create: (data: ICreate) =>
+    create: (data: ILocationCreate) =>
         Axios({
             method: 'post',
             url: '/location/admin/create',
             data,
         }),
     // 新增拍摄地点
-    update: (data: IUpdate) =>
+    update: (data: ILocationUpdate) =>
         Axios({
             method: 'post',
             url: '/location/admin/update',
             data,
         }),
     // 删除拍摄地点
-    delete: (params: IDelete) =>
+    delete: (params: ILocationDelete) =>
         Axios({
             method: 'get',
             url: '/location/admin/delete',

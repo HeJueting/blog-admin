@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import style from '../style.module.scss';
-import Prism from 'prismjs';
-import lodash from '../../../utils/lodash';
-import CONFIG from '../../../config';
 import settingAxios from '../../../api/setting';
 
 import { Button, Modal, Input, message } from 'antd';
 import ReactJson from 'react-json-view';
-import Icon from '../../../components/icon';
 
 // 接口：props
 interface IObj {

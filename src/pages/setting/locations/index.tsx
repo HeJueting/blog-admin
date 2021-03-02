@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import style from '../style.module.scss';
 import lodash from '../../../utils/lodash';
-import Icon from '../../../components/icon';
 import { Modal, Input, Button, Table } from 'antd';
 import locationAxios from '../../../api/location';
 import { timeFormat } from '../../../utils/help';

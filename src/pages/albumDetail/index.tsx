@@ -61,10 +61,14 @@ const AlbumDetail: React.FC = () => {
 
     // 点击删除照片
     const clickDeletePhoto = (data: any) => {
+        console.log('打印data：', data);
         Modal.confirm({
             title: '是否删除该照片',
             onOk: async () => {
-                const res = await photoAxios.delete(data);
+                const res = await photoAxios.delete({
+                    _id: data._id,
+                    url: data.url,
+                });
                 if (res.code === 0) {
                     initDataSource();
                     window.$message.success('照片删除成功');

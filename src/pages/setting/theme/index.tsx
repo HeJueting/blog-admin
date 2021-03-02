@@ -78,7 +78,7 @@ const Theme: React.FC<ICarsouelImageProps> = ({ data }) => {
                 );
                 // 遍历这些keys赋值给新的themeConfig
                 keys.forEach((k: string) => {
-                    newThemeConfig[k] = themeConfig[key];
+                    newThemeConfig[k] = themeConfig[k];
                 });
                 // 更新主题配置信息
                 setThemeConfig(newThemeConfig);

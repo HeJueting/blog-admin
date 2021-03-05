@@ -15,6 +15,7 @@ import SetRem from './components/setRem';
 import Header from './components/header';
 import Footer from './components/footer';
 import Loading from './components/loading';
+import ErrorCapture from './components/errorCapture';
 
 window.$message = message;
 
@@ -37,6 +38,7 @@ const App: React.FC = () => {
                     </div>
                     <SetRem />
                     <Loading />
+                    <ErrorCapture />
                 </BrowserRouter>
             </Provider>
         </ConfigProvider>

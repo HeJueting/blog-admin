@@ -36,7 +36,7 @@ const Tips: React.FC = () => {
             '/setting/test': ['设置', '测试'],
             '/setting/index': ['设置', '博客配置'],
         };
-        setTips(pathMapping[location.pathname]);
+        setTips(lodash.get(pathMapping, 'location.pathname', []));
     }, [location]);
 
     return (

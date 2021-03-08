@@ -104,12 +104,6 @@ export default [
     },
     // 设置
     {
-        folderName: 'settingTest',
-        path: '/setting/test',
-        title: '测试路由',
-        icon: 'icon-shezhi',
-    },
-    {
         folderName: 'setting',
         path: '/setting/index',
         title: '博客配置',

@@ -33,7 +33,6 @@ const Tips: React.FC = () => {
             '/record/list': ['生活记录', '生活列表'],
             '/record/edit': ['生活记录', '生活编辑'],
             '/comment/list': ['评论', '评论列表'],
-            '/setting/test': ['设置', '测试'],
             '/setting/index': ['设置', '博客配置'],
         };
         setTips(lodash.get(pathMapping, 'location.pathname', []));

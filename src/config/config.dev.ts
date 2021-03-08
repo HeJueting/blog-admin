@@ -9,6 +9,8 @@ const devConfig = {
     FILE_REQUEST_PATH: 'http://127.0.0.1:7070/minio/frontend/access/file',
     // 图片请求地址
     IMAGE_REQUEST_PATH: 'http://127.0.0.1:7070/minio/frontend/access/image',
+    // 博客前端登录地址
+    BLOG_LOGIN_URL: 'http://127.0.0.1:8080/login',
 };
 
 export default devConfig;

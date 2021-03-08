@@ -9,6 +9,8 @@ const prodConfig = {
     FILE_REQUEST_PATH: '',
     // 图片请求地址
     IMAGE_REQUEST_PATH: '',
+    // 博客前端登录地址
+    BLOG_LOGIN_URL: '',
 };
 
 export default prodConfig;

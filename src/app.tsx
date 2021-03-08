@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ConfigProvider, message } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN.js';
+import userAxios from './api/user';
+import CONFIG from './config';
 
 import style from './app.module.scss';
 import './assets/styles/antd.css';
@@ -20,26 +22,46 @@ import ErrorCapture from './components/errorCapture';
 window.$message = message;
 
 const App: React.FC = () => {
+    // 检测用户是否已经登录
+    const [isLogin, setIsLogin] = useState<boolean>(false);
+
+    const checkIsLogin = async () => {
+        const res = await userAxios.checkLogin();
+        if (res.data.isLogin) {
+            setIsLogin(true);
+        } else {
+            window.$message.error('未登录，1s后即将跳转到登录页面');
+            setTimeout(() => {
+                window.location.href = CONFIG.BLOG_LOGIN_URL;
+            }, 1000);
+        }
+    };
+    useEffect(() => {
+        checkIsLogin();
+    }, []);
+
     return (
         <ConfigProvider locale={zhCN}>
             <Provider>
-                <BrowserRouter>
-                    <div className={style.app}>
-                        <div className={style['app-wrap']}>
-                            <div className={style['app-wrap-left']}>
-                                <NavBar />
-                            </div>
-                            <div className={style['app-wrap-right']}>
-                                <Header />
-                                <Routers />
-                                <Footer />
+                {isLogin && (
+                    <BrowserRouter>
+                        <div className={style.app}>
+                            <div className={style['app-wrap']}>
+                                <div className={style['app-wrap-left']}>
+                                    <NavBar />
+                                </div>
+                                <div className={style['app-wrap-right']}>
+                                    <Header />
+                                    <Routers />
+                                    <Footer />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <SetRem />
-                    <Loading />
-                    <ErrorCapture />
-                </BrowserRouter>
+                    </BrowserRouter>
+                )}
+                <SetRem />
+                <Loading />
+                <ErrorCapture />
             </Provider>
         </ConfigProvider>
     );

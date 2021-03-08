@@ -9,6 +9,12 @@ const userAxios = {
             url: '/user/frontend/login',
             data,
         }),
+    // 校验登录
+    checkLogin: () =>
+        Axios({
+            method: 'get',
+            url: '/user/frontend/checkLogin',
+        }),
     // 获取用户信息
     getUserInfo: () =>
         Axios({

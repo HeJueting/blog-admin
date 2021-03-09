@@ -44,7 +44,7 @@ const App: React.FC = () => {
         <ConfigProvider locale={zhCN}>
             <Provider>
                 {isLogin && (
-                    <BrowserRouter>
+                    <BrowserRouter basename="/blog/admin">
                         <div className={style.app}>
                             <div className={style['app-wrap']}>
                                 <div className={style['app-wrap-left']}>

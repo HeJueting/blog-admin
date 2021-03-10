@@ -43,16 +43,7 @@
         "extends": [
             "react-app",
             "react-app/jest"
-        ],
-        "rules": {
-            "indent": [
-                "error",
-                4,
-                {
-                    "SwitchCase": 1
-                }
-            ]
-        }
+        ]
     },
     "browserslist": {
         "production": [

@@ -37,8 +37,7 @@ const App: React.FC = () => {
         }
     };
     useEffect(() => {
-        setIsLogin(true);
-        //checkIsLogin();
+        checkIsLogin();
     }, []);
 
     return (

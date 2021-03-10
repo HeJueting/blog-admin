@@ -1,7 +1,5 @@
 import React, { useState, useImperativeHandle } from 'react';
 import style from './style.module.scss';
-import './braft-editor.css';
-import './code-highlighter.css';
 import CONFIG from '../../config';
 import localForage from 'localforage';
 // editor编辑器扩展

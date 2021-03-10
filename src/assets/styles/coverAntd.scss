@@ -1,6 +1,9 @@
 @import './theme.scss';
 
 // 导航栏
+.ant-menu {
+    font-size: 1.4rem;
+}
 .ant-menu.ant-menu-dark,
 .ant-menu-dark .ant-menu-sub,
 .ant-menu.ant-menu-dark .ant-menu-sub {

@@ -6,7 +6,7 @@ import userAxios from './api/user';
 import CONFIG from './config';
 
 import style from './app.module.scss';
-import './assets/styles/antd.css';
+import './app.css';
 import './assets/styles/global.scss';
 import './assets/styles/coverAntd.scss';
 

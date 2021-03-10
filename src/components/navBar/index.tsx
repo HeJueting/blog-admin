@@ -22,45 +22,6 @@ interface IMenuItem {
 }
 
 const NavBar: React.FC = () => {
-    // 菜单项
-    const rootMenus = [
-        {
-            title: '个人中心',
-            icon: 'icon-user',
-            key: 'user',
-            children: [],
-        },
-        {
-            title: '我的文章',
-            icon: 'icon-book',
-            key: 'article',
-            children: [],
-        },
-        {
-            title: '相册集',
-            icon: 'icon-LC_icon_photo_fill',
-            key: 'album',
-            children: [],
-        },
-        {
-            title: '生活记录',
-            icon: 'icon-kafei',
-            key: 'record',
-            children: [],
-        },
-        {
-            title: '评论',
-            icon: 'icon-tubiaozhizuo-',
-            key: 'comment',
-            children: [],
-        },
-        {
-            title: '设置',
-            icon: 'icon-shezhi',
-            key: 'setting',
-            children: [],
-        },
-    ];
     // icon样式
     const iconStyle = {
         marginRight: '1vw',
@@ -71,6 +32,45 @@ const NavBar: React.FC = () => {
 
     // 初始化菜单路由
     useEffect(() => {
+        // 菜单项
+        const rootMenus = [
+            {
+                title: '个人中心',
+                icon: 'icon-user',
+                key: 'user',
+                children: [],
+            },
+            {
+                title: '我的文章',
+                icon: 'icon-book',
+                key: 'article',
+                children: [],
+            },
+            {
+                title: '相册集',
+                icon: 'icon-LC_icon_photo_fill',
+                key: 'album',
+                children: [],
+            },
+            {
+                title: '生活记录',
+                icon: 'icon-kafei',
+                key: 'record',
+                children: [],
+            },
+            {
+                title: '评论',
+                icon: 'icon-tubiaozhizuo-',
+                key: 'comment',
+                children: [],
+            },
+            {
+                title: '设置',
+                icon: 'icon-shezhi',
+                key: 'setting',
+                children: [],
+            },
+        ];
         // 遍历rootMenus，组装他的children
         rootMenus.forEach((item: IMenuItem) => {
             const childRouters: IRouterItem[] = routerConfig.filter(

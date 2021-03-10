@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import style from '../style.module.scss';
 import lodash from '../../../utils/lodash';
 import CONFIG from '../../../config';
@@ -20,14 +20,14 @@ const CarsouelImage: React.FC<ICarsouelImageProps> = ({ data }) => {
     const [images, setImages] = useState<string[]>([]);
 
     // 初始化页面数据
-    const initData = () => {
+    const initData = useCallback(() => {
         if (data) {
             setImages(data.carsouelImages);
         }
-    };
+    }, [data]);
     useEffect(() => {
         initData();
-    }, [data]);
+    }, [initData]);
 
     // 背景图片的展示
     const bacImageUrl = (bacImg: string) => {

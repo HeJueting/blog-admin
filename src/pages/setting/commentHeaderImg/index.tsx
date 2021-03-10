@@ -96,7 +96,7 @@ const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({ data }) => {
                     <div className={style['headerImg-wrap']} key={item.img}>
                         <div className={style['info']}>
                             <div className={style['img-wrap']}>
-                                <img src={item.img} />
+                                <img alt="用户评论头像" src={item.img} />
                                 <div className={style['mask']}>
                                     <Icon
                                         onClick={() => {
@@ -126,7 +126,7 @@ const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({ data }) => {
                 <div className={style['commentHeaderImg-modal']}>
                     {img ? (
                         <div className={style['img-wrap']}>
-                            <img src={img}></img>
+                            <img alt="用户评论头像" src={img}></img>
                             <div className={style['img-mask']}>
                                 <Icon
                                     onClick={() => {

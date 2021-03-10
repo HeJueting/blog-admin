@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import style from '../style.module.scss';
 import settingAxios from '../../../api/setting';
 
@@ -27,14 +27,14 @@ const Theme: React.FC<ICarsouelImageProps> = ({ data }) => {
     const [operation, setOperation] = useState<string>('create');
 
     // 初始化页面数据
-    const initData = () => {
+    const initData = useCallback(() => {
         if (data) {
             setThemeConfig(data.themeConfig);
         }
-    };
+    }, [data]);
     useEffect(() => {
         initData();
-    }, [data]);
+    }, [initData]);
 
     // 点击保存（博客首页）
     const saveOnClick = async () => {
@@ -204,7 +204,7 @@ const Theme: React.FC<ICarsouelImageProps> = ({ data }) => {
                             </div>
                         ) : (
                             <div className={style['error-json-wrap']}>
-                                json解析错误
+                                {obj && 'json解析错误'}
                             </div>
                         )}
                     </div>

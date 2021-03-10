@@ -29,7 +29,7 @@ const ArticleCategory: React.FC = () => {
                 treeData[index].key = `${treeChild.parentId}-${treeChild.name}`;
             });
             // 找到最大的level值
-            let maxLevel = treeData.sort(
+            let maxLevel: number = treeData.sort(
                 (a: any, b: any) => b.level - a.level
             )[0].level;
             // 递归赋值（先将3层分类复制children给2层分类，再删除所有3层分类，以此类推）

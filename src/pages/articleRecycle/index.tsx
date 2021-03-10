@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Pagination, Table, Modal } from 'antd';
 import articleAxios from '../../api/article';
 import { timeFormat } from '../../utils/help';
@@ -60,7 +60,7 @@ const ArticleRecycle: React.FC = () => {
     const [total, setTotal] = useState(0);
 
     // 初始化文章列表
-    const initDataSource = async () => {
+    const initDataSource = useCallback(async () => {
         // 查询数据
         const res = await articleAxios.list({
             page,
@@ -76,10 +76,10 @@ const ArticleRecycle: React.FC = () => {
             setDataSource(res.data);
             setTotal(res.total as number);
         }
-    };
+    }, [page, pageSize]);
     useEffect(() => {
         initDataSource();
-    }, [page, pageSize]);
+    }, [initDataSource]);
 
     // 恢复
     const recovery = async (data: any) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import style from '../style.module.scss';
 import CONFIG from '../../../config';
 
@@ -48,17 +48,17 @@ const HomePageImage: React.FC<IHomePageImageProps> = ({ data }) => {
     ];
 
     // 初始化页面数据
-    const initData = () => {
+    const initData = useCallback(() => {
         if (data) {
             setFirstBacImg(data.firstBacImage);
             setSecondBacImg(data.secondBacImage);
             setThirdBacImg(data.thirdBacImage);
             setAboutMeBacImg(data.aboutMeBacImage);
         }
-    };
+    }, [data]);
     useEffect(() => {
         initData();
-    }, [data]);
+    }, [initData]);
 
     // 背景图片的展示
     const bacImageUrl = (bacImg: string) => {

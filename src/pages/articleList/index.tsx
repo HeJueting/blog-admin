@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import style from './style.module.scss';
 import lodash from '../../utils/lodash';
 import { useHistory } from 'react-router-dom';
@@ -153,69 +153,67 @@ const ArticleList: React.FC = () => {
     // 路由
     const history = useHistory();
 
-    // 初始化文章分类数据（只请求一次）
-    useEffect(() => {
-        initCategoryList();
-    }, []);
-    // 初始化文章列表数据
-    useEffect(() => {
+    // 初始化文章列表
+    const initDataSource = useCallback(async () => {
         if (categoryList.length) {
-            initDataSource();
+            // 查询数据
+            const condition: IArticleList = {
+                keyword,
+                page,
+                pageSize,
+                sort,
+                state,
+            };
+            if (category !== 'all') {
+                condition.categoryId = category;
+            }
+            const res = await articleAxios.list(condition);
+
+            // 查询数据成功
+            if (res.code === 0) {
+                const stateCn = ['草稿', '已发布', '已删除'];
+                res.data.forEach((item: any, index: number) => {
+                    // 添加一个key值
+                    res.data[index].key = item._id;
+                    // 根据分类_id替换成分类名称
+                    const categoryIndex = lodash.findIndex(
+                        categoryList,
+                        (o: any) => o._id === item.categoryId
+                    );
+                    res.data[index].category = lodash.get(
+                        categoryList[categoryIndex],
+                        'name',
+                        '暂未分类'
+                    );
+                    // 根据状态值，拿到状态的中文
+                    res.data[index].state = stateCn[item.state];
+                });
+                setDataSource(res.data);
+                setTotal(res.total as number);
+            }
         }
     }, [page, pageSize, sort, state, category, keyword, categoryList]);
+    // 初始化文章列表数据
+    useEffect(() => {
+        initDataSource();
+    }, [initDataSource]);
 
-    // 初始化文章列表
-    const initDataSource = async () => {
-        // 查询数据
-        const condition: IArticleList = {
-            keyword,
-            page,
-            pageSize,
-            sort,
-            state,
+    // 初始化文章分类数据（只请求一次）
+    useEffect(() => {
+        const initCategoryList = async () => {
+            const res = await articleCategoryAxios.list();
+            if (res.code === 0) {
+                res.data.unshift({
+                    _id: 'all',
+                    name: '全部（文章分类）',
+                });
+                setCategoryList(res.data);
+            } else {
+                window.$message.error(res.msg);
+            }
         };
-        if (category !== 'all') {
-            condition.categoryId = category;
-        }
-        const res = await articleAxios.list(condition);
-
-        // 查询数据成功
-        if (res.code === 0) {
-            const stateCn = ['草稿', '已发布', '已删除'];
-            res.data.forEach((item: any, index: number) => {
-                // 添加一个key值
-                res.data[index].key = item._id;
-                // 根据分类_id替换成分类名称
-                const categoryIndex = lodash.findIndex(
-                    categoryList,
-                    (o: any) => o._id === item.categoryId
-                );
-                res.data[index].category = lodash.get(
-                    categoryList[categoryIndex],
-                    'name',
-                    '暂未分类'
-                );
-                // 根据状态值，拿到状态的中文
-                res.data[index].state = stateCn[item.state];
-            });
-            setDataSource(res.data);
-            setTotal(res.total as number);
-        }
-    };
-
-    // 初始化文章分类信息
-    const initCategoryList = async () => {
-        const res = await articleCategoryAxios.list();
-        if (res.code === 0) {
-            res.data.unshift({
-                _id: 'all',
-                name: '全部（文章分类）',
-            });
-            setCategoryList(res.data);
-        } else {
-            window.$message.error(res.msg);
-        }
-    };
+        initCategoryList();
+    }, []);
 
     // 分类发生改变
     const categoryChange = (value: string) => {

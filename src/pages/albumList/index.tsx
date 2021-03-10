@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import style from './style.module.scss';
 import lodash from '../../utils/lodash';
@@ -22,51 +22,54 @@ const AlbumList: React.FC = () => {
     const [defaultData, setDefaultData] = useState<any>({});
 
     // 初始化dataSource
-    const initDataSource: (categoryId?: string) => void = async (
-        categoryId
-    ) => {
-        let categoryList = [];
-        let albumList: any[] = [];
-        // 请求相册分类信息
-        const categoryRes = await albumCategoryAxios.searchList();
-        if (categoryRes.code === 0) {
-            categoryList = categoryRes.data;
-        }
-        // 如果不存在相册分类，提醒先去创建相册分类
-        if (!categoryList.length) {
-            window.$message.warn(
-                '未检测到任何相册分类，请前往相册分类页面进行创建'
-            );
-            setTimeout(() => {
-                history.push('/album/category');
-            }, 1000);
-        } else {
-            // 请求相册信息
-            const albumRes = await albumAxios.searchList();
-            if (albumRes.code === 0) {
-                albumList = albumRes.data;
+    const initDataSource = useCallback(
+        async (categoryId?: string) => {
+            let categoryList = [];
+            let albumList: any[] = [];
+            // 请求相册分类信息
+            const categoryRes = await albumCategoryAxios.searchList();
+            if (categoryRes.code === 0) {
+                categoryList = categoryRes.data;
             }
-            // 根据相册分类信息和相册信息封装dataSource
-            const dataSource: any[] = [];
-            categoryList.forEach((category: any, index: number) => {
-                const albums = albumList.filter(
-                    (album) => album.categoryId === category._id
+            // 如果不存在相册分类，提醒先去创建相册分类
+            if (!categoryList.length) {
+                window.$message.warn(
+                    '未检测到任何相册分类，请前往相册分类页面进行创建'
                 );
-                dataSource[index] = {
-                    ...category,
-                    children: albums,
-                };
-            });
-            // 更新state
-            setCategoryId(
-                categoryId ? categoryId : lodash.get(dataSource, '[0]._id', '')
-            );
-            setDataSource(dataSource);
-        }
-    };
+                setTimeout(() => {
+                    history.push('/album/category');
+                }, 1000);
+            } else {
+                // 请求相册信息
+                const albumRes = await albumAxios.searchList();
+                if (albumRes.code === 0) {
+                    albumList = albumRes.data;
+                }
+                // 根据相册分类信息和相册信息封装dataSource
+                const dataSource: any[] = [];
+                categoryList.forEach((category: any, index: number) => {
+                    const albums = albumList.filter(
+                        (album) => album.categoryId === category._id
+                    );
+                    dataSource[index] = {
+                        ...category,
+                        children: albums,
+                    };
+                });
+                // 更新state
+                setCategoryId(
+                    categoryId
+                        ? categoryId
+                        : lodash.get(dataSource, '[0]._id', '')
+                );
+                setDataSource(dataSource);
+            }
+        },
+        [history]
+    );
     useEffect(() => {
         initDataSource();
-    }, []);
+    }, [initDataSource]);
 
     // 点击编辑
     const clickEdit = (data: any) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import style from './style.module.scss';
 import { useHistory } from 'react-router-dom';
 import { Select, Input, Pagination, Table, Modal } from 'antd';
@@ -74,7 +74,7 @@ const RecordList: React.FC = () => {
     const [total, setTotal] = useState(0);
 
     // 初始化数据列表
-    const initDataSource = async () => {
+    const initDataSource = useCallback(async () => {
         const res = await recordAxios.list({
             sort,
             keyword,
@@ -87,10 +87,10 @@ const RecordList: React.FC = () => {
         });
         setDataSource(res.data);
         setTotal(res.count as number);
-    };
+    }, [page, pageSize, sort, keyword]);
     useEffect(() => {
         initDataSource();
-    }, [page, pageSize, sort, keyword]);
+    }, [initDataSource]);
 
     // 排序发生改变
     const sortChange = (value: any) => {

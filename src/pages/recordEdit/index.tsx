@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import style from './style.module.scss';
 import { useLocation, useHistory } from 'react-router-dom';
 import { Input, Button } from 'antd';
@@ -20,7 +20,7 @@ const RecordEdit: React.FC = () => {
     const editorRef = useRef<any>(null);
 
     // 初始化内容
-    const initDefaultState = () => {
+    const initDefaultState = useCallback(() => {
         const editObject: any = location.state;
         if (editObject) {
             setIsEdit(true);
@@ -30,10 +30,10 @@ const RecordEdit: React.FC = () => {
             // 初始化编辑器的html内容
             editorRef.current.initEditorState(editObject.content);
         }
-    };
+    }, [location]);
     useEffect(() => {
         initDefaultState();
-    }, []);
+    }, [initDefaultState]);
 
     // 文章标题发生改变
     const articleTitleOnChange = (e: any) => {

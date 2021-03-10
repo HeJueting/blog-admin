@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import style from './style.module.scss';
 import { Select, Input, Pagination, Table, Modal } from 'antd';
 import commentAxios from '../../api/comment';
@@ -92,7 +92,7 @@ const CommentList: React.FC = () => {
     const [total, setTotal] = useState(0);
 
     // 初始化数据
-    const initDataSource = async () => {
+    const initDataSource = useCallback(async () => {
         const condition: any = {
             sort,
             page,
@@ -114,10 +114,10 @@ const CommentList: React.FC = () => {
             setDataSource(res.data);
             setTotal(res.total as number);
         }
-    };
+    }, [page, pageSize, category, keyword, sort]);
     useEffect(() => {
         initDataSource();
-    }, [page, pageSize, category, keyword, sort]);
+    }, [initDataSource]);
 
     // 分类发生改变
     const categoryChange = (value: any) => {

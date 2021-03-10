@@ -31,7 +31,7 @@ const OperateModal: React.FC<IOperateModalProps> = ({
     useEffect(() => {
         setName(lodash.get(defaultData, 'name', ''));
         setDescription(lodash.get(defaultData, 'description', ''));
-    }, []);
+    }, [defaultData]);
 
     const onCancel = () => {
         setVisible(false);

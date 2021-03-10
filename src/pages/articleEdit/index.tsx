@@ -45,7 +45,7 @@ const ArticleEdit: React.FC = () => {
     const editorRef = useRef<any>(null);
 
     // 初始化编辑器内容
-    const initEditorContent = () => {
+    useEffect(() => {
         const editObject: any = location.state;
         // 编辑状态
         if (editObject) {
@@ -64,23 +64,21 @@ const ArticleEdit: React.FC = () => {
             // 初始化编辑器的html内容
             editorRef.current.initEditorState(editObject.html);
         }
-    };
-    // 获取文章分类信息
-    const initCategoryList = async () => {
-        const res = await articleCategoryAxios.list();
-        if (res.code === 0) {
-            // 设置分类菜单
-            setCategoryList(res.data);
-        } else {
-            window.$message.error(res.msg);
-        }
-    };
+    }, [categoryList, location]);
+
+    // 获取文章分类信息（只初始化一次）
     useEffect(() => {
+        const initCategoryList = async () => {
+            const res = await articleCategoryAxios.list();
+            if (res.code === 0) {
+                // 设置分类菜单
+                setCategoryList(res.data);
+            } else {
+                window.$message.error(res.msg);
+            }
+        };
         initCategoryList();
     }, []);
-    useEffect(() => {
-        initEditorContent();
-    }, [categoryList]);
 
     // 确认删除文章缩略图
     const checkDeleteArticleCoverImage = () => {

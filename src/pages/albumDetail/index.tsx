@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import style from './style.module.scss';
 import { useLocation, useHistory } from 'react-router-dom';
 import { Button, Modal } from 'antd';
@@ -19,7 +19,7 @@ const AlbumDetail: React.FC = () => {
     const [imageZoomUrl, setImageZoomUrl] = useState('');
     const [albumInfo, setAlbumInfo] = useState<any>({});
 
-    // 初始化页面数据
+    // 校验是否有相册信息
     useEffect(() => {
         // 如果没有具体相册信息，直接放回到相册管理页面
         const query: any = location.state;
@@ -28,20 +28,20 @@ const AlbumDetail: React.FC = () => {
         } else {
             setAlbumInfo(query);
         }
-    }, []);
-    useEffect(() => {
-        initDataSource();
-    }, [albumInfo]);
+    }, [location, history]);
 
     // 初始化页面数据
-    const initDataSource = async () => {
+    const initDataSource = useCallback(async () => {
         const res = await photoAxios.searchList({
             albumId: albumInfo._id,
         });
         if (res.code === 0) {
             setDataSource(res.data);
         }
-    };
+    }, [albumInfo]);
+    useEffect(() => {
+        initDataSource();
+    }, [initDataSource]);
 
     // 点击上传照片
     const clickUploadPhotoBtn = () => {

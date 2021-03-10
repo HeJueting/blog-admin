@@ -47,7 +47,7 @@ const Upload: React.FC<IUploadProps> = ({
         if (footer) {
             antdProps.footer = footer;
         }
-    }, []);
+    }, [antdProps, footer]);
 
     // 上传之前的生命钩子
     const defaultBeforeUpload = () => {

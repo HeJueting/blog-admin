@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import style from './style.module.scss';
 import './style.scss';
 import axios from 'axios';
@@ -37,7 +37,7 @@ const UserCloud: React.FC = () => {
     let contextMenuData: any = null;
 
     // 初始化file和folder信息
-    const initDataSource = async () => {
+    const initDataSource = useCallback(async () => {
         let res: any;
         const bucketName = lodash.get(pathList, '[1].name', '');
         const bucketPrefix = lodash.get(lodash.last(pathList), 'prefix', '');
@@ -65,11 +65,11 @@ const UserCloud: React.FC = () => {
             });
         }
         setResourceList(res.data);
-    };
+    }, [pathList]);
     // pathList更新后，重新请求数据
     useEffect(() => {
         initDataSource();
-    }, [pathList]);
+    }, [initDataSource]);
 
     // 文件、文件夹：鼠标事件
     const resourceOnClick = (e: any, data: any) => {

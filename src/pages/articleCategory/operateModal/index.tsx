@@ -44,7 +44,7 @@ const OperateModal: React.FC<IOperateModalProp> = ({
         setName(defaultName);
         setIsPublic(defaultIsPublic);
         setDescription(defaultDescription);
-    }, []);
+    }, [defaultData]);
 
     // 取消
     const onCancel = () => {

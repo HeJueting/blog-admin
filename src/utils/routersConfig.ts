@@ -6,7 +6,7 @@
  *  hidden: 是否展示该路由，如果设置为true，导航栏中不会展示
  */
 
-export default [
+const routerConfig = [
     // 个人中心
     {
         folderName: 'userFlow',
@@ -110,3 +110,5 @@ export default [
         icon: 'icon-shezhi',
     },
 ];
+
+export default routerConfig;

@@ -53,7 +53,7 @@ const Links: React.FC<ILinksProps> = ({ data }) => {
             window.$message.error('请输入网页标题');
         } else if (!url) {
             window.$message.error('请输入链接地址');
-        } else if (links.filter((item: any) => item.title == title).length) {
+        } else if (links.filter((item: any) => item.title === title).length) {
             window.$message.error('已存在该网页链接');
         } else {
             links.push({
@@ -83,7 +83,11 @@ const Links: React.FC<ILinksProps> = ({ data }) => {
                 {/* 友情链接 */}
                 {links.map((item: any, index: number) => (
                     <div className={style['link-item']} key={item.title}>
-                        <a href={item.url} target="_blank">
+                        <a
+                            href={item.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
                             {item.title}
                         </a>
                         <Icon

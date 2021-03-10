@@ -32,7 +32,7 @@ const CertificateModal: React.FC<ICertificateModalProps> = ({
         setName(lodash.get(data, 'name', ''));
         setNumber(lodash.get(data, 'number', ''));
         setTime(lodash.get(data, 'time', ''));
-    }, []);
+    }, [data]);
 
     // 清空表单内容
     const clearInput = () => {

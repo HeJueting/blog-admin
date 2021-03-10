@@ -12,7 +12,7 @@ import last from 'lodash/last.js';
 import dropRight from 'lodash/dropRight.js';
 import omit from 'lodash/omit.js';
 
-export default {
+const lodash = {
     isEqual,
     cloneDeep,
     forOwn,
@@ -27,3 +27,5 @@ export default {
     dropRight,
     omit,
 };
+
+export default lodash;

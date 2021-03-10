@@ -70,7 +70,7 @@ const OperateModal: React.FC<IOperateModalProps> = ({
         setBacImg(lodash.get(defaultData, 'bacImg', ''));
         setLocation(lodash.get(defaultData, 'location', ''));
         setDescription(lodash.get(defaultData, 'description', ''));
-    }, []);
+    }, [defaultData]);
 
     // 确认是否删除相册背景缩略图
     const checkDeleteAlbumBacImage = () => {

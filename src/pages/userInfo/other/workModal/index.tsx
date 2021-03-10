@@ -38,7 +38,7 @@ const WorkModal: React.FC<IWorkModalProps> = ({
         setLocation(lodash.get(data, 'location', ''));
         setStartTime(lodash.get(data, 'startTime', ''));
         setEndTime(lodash.get(data, 'endTime', ''));
-    }, []);
+    }, [data]);
 
     // 清空表单内容
     const clearInput = () => {

@@ -22,7 +22,7 @@ const ImageZoom: React.FC<IImageZoomProps> = ({ url, visible, setVisible }) => {
         img.onload = () => {
             setIsWidthEr(!!(img.width > img.height));
         };
-    }, []);
+    }, [url]);
 
     const zoomMax = () => {
         if (level < 8) {

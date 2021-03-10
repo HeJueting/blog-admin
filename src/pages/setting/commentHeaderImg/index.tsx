@@ -52,7 +52,9 @@ const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({ data }) => {
             window.$message.error('请上传头像配图');
         } else if (!name) {
             window.$message.error('请输入用户昵称');
-        } else if (dataSource.filter((item: any) => item.name == name).length) {
+        } else if (
+            dataSource.filter((item: any) => item.name === name).length
+        ) {
             window.$message.error('用户昵称重复');
         } else {
             dataSource.push({

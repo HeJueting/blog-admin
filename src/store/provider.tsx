@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 import reducer from './reducer';
-import initialState from './initialState';
 import context from './context';
 
 // 接口：props
@@ -10,7 +9,9 @@ interface IProviderProps {
 
 const Provider: React.FC<IProviderProps> = ({ children }) => {
     // 使用reducer搭配context实现状态全局管理
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, {
+        loading: false,
+    });
     window.$dispatch = dispatch;
     window.$store = state;
 

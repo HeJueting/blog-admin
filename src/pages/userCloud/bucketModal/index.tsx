@@ -52,7 +52,7 @@ const BucketModal: React.FC<IBucketModalProps> = ({
         setName(lodash.get(defaultData, 'name', ''));
         setPurview(lodash.get(defaultData, 'purview', 0));
         setPassword(lodash.get(defaultData, 'password', ''));
-    }, []);
+    }, [defaultData]);
 
     // 点击取消
     const onCancel = () => {

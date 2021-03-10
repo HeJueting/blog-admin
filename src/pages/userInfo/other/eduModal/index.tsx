@@ -38,7 +38,7 @@ const EduModal: React.FC<IEduModalProps> = ({
         setDiploma(lodash.get(data, 'diploma', ''));
         setStartTime(lodash.get(data, 'startTime', ''));
         setEndTime(lodash.get(data, 'endTime', ''));
-    }, []);
+    }, [data]);
 
     // 清空表单内容
     const clearInput = () => {

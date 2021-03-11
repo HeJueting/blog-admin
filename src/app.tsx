@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ConfigProvider, message } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN.js';
 import userAxios from './api/user';
+import activeAxios from './api/active';
 import CONFIG from './config';
 
 import style from './app.module.scss';
@@ -29,6 +30,8 @@ const App: React.FC = () => {
         const res = await userAxios.checkLogin();
         if (res.data.isLogin) {
             setIsLogin(true);
+            // 登录次数+1
+            await activeAxios.addLogin();
         } else {
             window.$message.error('未登录，1s后即将跳转到登录页面');
             setTimeout(() => {

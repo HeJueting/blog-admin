@@ -14,9 +14,13 @@ interface ICarsouelImageProps {
         _id: string;
         carsouelImages: string[];
     };
+    initSettingInfo: () => void;
 }
 
-const CarsouelImage: React.FC<ICarsouelImageProps> = ({ data }) => {
+const CarsouelImage: React.FC<ICarsouelImageProps> = ({
+    data,
+    initSettingInfo,
+}) => {
     const [images, setImages] = useState<string[]>([]);
 
     // 初始化页面数据
@@ -47,6 +51,7 @@ const CarsouelImage: React.FC<ICarsouelImageProps> = ({ data }) => {
             },
         });
         if (res.code === 0) {
+            initSettingInfo();
             window.$message.success('保存成功');
         }
     };

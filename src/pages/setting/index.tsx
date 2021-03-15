@@ -23,11 +23,14 @@ const Setting: React.FC = () => {
 
     return (
         <>
-            <HomePageImage data={settingRes.data} />
-            <CarouselImage data={settingRes.data} />
+            <HomePageImage data={settingRes.data} initSettingInfo={initData} />
+            <CarouselImage data={settingRes.data} initSettingInfo={initData} />
             <Links data={settingRes.data} />
             <Locations />
-            <CommentHeaderImg data={settingRes.data} />
+            <CommentHeaderImg
+                data={settingRes.data}
+                initSettingInfo={initData}
+            />
             <Theme data={settingRes.data} />
         </>
     );

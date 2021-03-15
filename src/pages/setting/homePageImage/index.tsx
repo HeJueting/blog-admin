@@ -16,9 +16,13 @@ interface IHomePageImageProps {
         thirdBacImage: string;
         aboutMeBacImage: string;
     };
+    initSettingInfo: () => void;
 }
 
-const HomePageImage: React.FC<IHomePageImageProps> = ({ data }) => {
+const HomePageImage: React.FC<IHomePageImageProps> = ({
+    data,
+    initSettingInfo,
+}) => {
     // 博客首页
     const [fisrtBacImg, setFirstBacImg] = useState('');
     const [secondBacImg, setSecondBacImg] = useState('');
@@ -81,6 +85,8 @@ const HomePageImage: React.FC<IHomePageImageProps> = ({ data }) => {
             },
         });
         if (res.code === 0) {
+            console.log(initSettingInfo);
+            initSettingInfo();
             window.$message.success('保存成功');
         }
     };

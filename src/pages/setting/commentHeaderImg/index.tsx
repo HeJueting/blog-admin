@@ -17,9 +17,13 @@ interface ICommentHeaderImgProps {
             img: string;
         }[];
     };
+    initSettingInfo: () => void;
 }
 
-const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({ data }) => {
+const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({
+    data,
+    initSettingInfo,
+}) => {
     // 评论用户头像数据
     const [dataSource, setDataSource] = useState<any>([]);
     // 弹窗
@@ -42,6 +46,7 @@ const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({ data }) => {
             },
         });
         if (res.code === 0) {
+            initSettingInfo();
             window.$message.success('保存成功');
         }
     };

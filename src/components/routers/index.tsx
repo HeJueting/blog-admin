@@ -17,7 +17,6 @@ const Routers: React.FC<IRourerProps> = () => {
     const whiteRouters = ['/user/flow', '/user/active', '/record/edit'];
 
     useEffect(() => {
-        console.log(location.pathname);
         if (hisPath !== location.pathname) {
             if (whiteRouters.indexOf(location.pathname) === -1) {
                 showLoading();

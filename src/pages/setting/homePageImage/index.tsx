@@ -85,7 +85,6 @@ const HomePageImage: React.FC<IHomePageImageProps> = ({
             },
         });
         if (res.code === 0) {
-            console.log(initSettingInfo);
             initSettingInfo();
             window.$message.success('保存成功');
         }

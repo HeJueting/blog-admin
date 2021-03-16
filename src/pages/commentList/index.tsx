@@ -43,6 +43,14 @@ const CommentList: React.FC = () => {
                     >
                         删除
                     </span>
+                    <span
+                        className="operate-span"
+                        onClick={() => {
+                            checkOnClick(data);
+                        }}
+                    >
+                        查看
+                    </span>
                 </div>
             ),
         },
@@ -124,24 +132,20 @@ const CommentList: React.FC = () => {
         setPage(1);
         setCategory(value);
     };
-
     // 排序发生改变
     const sortChange = (value: any) => {
         setPage(1);
         setSort(value);
     };
-
     // 关键字查询
     const search = (value: any) => {
         setPage(1);
         setKeyword(value);
     };
-
     // 页码变化
     const pageChange = (page: number) => {
         setPage(page);
     };
-
     // 页码变化
     const pageSizeChange = (current: any, size: any) => {
         setPage(1);
@@ -160,6 +164,27 @@ const CommentList: React.FC = () => {
                     initDataSource();
                     window.$message.success(res.msg);
                 }
+            },
+        });
+    };
+    // 点击查看
+    const checkOnClick = (data: any) => {
+        console.log(data);
+        Modal.info({
+            width: '40%',
+            content: (
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: data.html.replace(/<br\s*\/?>/g, '\n'),
+                    }}
+                />
+            ),
+            closable: true,
+            icon: '',
+            okButtonProps: {
+                style: {
+                    display: 'none',
+                },
             },
         });
     };

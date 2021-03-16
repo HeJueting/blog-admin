@@ -3,6 +3,8 @@ import style from './style.module.scss';
 import { Select, Input, Pagination, Table, Modal } from 'antd';
 import commentAxios from '../../api/comment';
 import { timeFormat } from '../../utils/help';
+import Prism from 'prismjs';
+import '../../assets/styles/code-highlighter.css';
 
 const CommentList: React.FC = () => {
     // 文章列表数据
@@ -169,11 +171,11 @@ const CommentList: React.FC = () => {
     };
     // 点击查看
     const checkOnClick = (data: any) => {
-        console.log(data);
         Modal.info({
             width: '40%',
             content: (
                 <div
+                    className={style['content']}
                     dangerouslySetInnerHTML={{
                         __html: data.html.replace(/<br\s*\/?>/g, '\n'),
                     }}
@@ -186,6 +188,9 @@ const CommentList: React.FC = () => {
                     display: 'none',
                 },
             },
+        });
+        process.nextTick(() => {
+            Prism.highlightAll();
         });
     };
 

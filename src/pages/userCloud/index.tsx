@@ -484,31 +484,33 @@ const UserCloud: React.FC = () => {
             </ContextMenu>
 
             {/* 资源上传的弹窗 */}
-            <Modal
-                title="资源上传"
-                visible={uploadModalVisible}
-                width="80%"
-                onCancel={() => {
-                    setUploadModalVisible(false);
-                }}
-                footer={null}
-            >
-                <Upload
-                    action="/minio/admin/upload/multi"
-                    multiple
-                    uploadDone={initDataSource}
-                    customRender={customRender}
-                    beforeUpload={beforeUpload}
-                    data={{
-                        bucketName,
-                        prefix,
+            {uploadModalVisible && (
+                <Modal
+                    title="资源上传"
+                    visible={uploadModalVisible}
+                    width="80%"
+                    onCancel={() => {
+                        setUploadModalVisible(false);
                     }}
+                    footer={null}
                 >
-                    <div className="upload-box">
-                        <Icon type="icon-add2" />
-                    </div>
-                </Upload>
-            </Modal>
+                    <Upload
+                        action="/minio/admin/upload/multi"
+                        multiple
+                        uploadDone={initDataSource}
+                        customRender={customRender}
+                        beforeUpload={beforeUpload}
+                        data={{
+                            bucketName,
+                            prefix,
+                        }}
+                    >
+                        <div className="upload-box">
+                            <Icon type="icon-add2" />
+                        </div>
+                    </Upload>
+                </Modal>
+            )}
 
             {/* 创建存储桶的弹窗 */}
             {bucketModalVisible && (

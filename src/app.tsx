@@ -33,7 +33,7 @@ const App: React.FC = () => {
             // 登录次数+1
             await activeAxios.addLogin();
         } else {
-            window.$message.error('未登录，1s后即将跳转到登录页面');
+            window.$message.error('未登录，即将跳转到登录页面');
             setTimeout(() => {
                 window.location.href = CONFIG.BLOG_LOGIN_URL;
             }, 1000);

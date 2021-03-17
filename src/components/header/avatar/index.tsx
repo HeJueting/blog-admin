@@ -71,9 +71,11 @@ const Avatar: React.FC = () => {
             if (res.code === 0) {
                 window.$message.success('修改密码成功，请重新登录');
                 await localForage.setItem('token', '');
-                // to do list...
-                // 跳转到登录界面
                 setVisible(false);
+                // 跳转到登录界面
+                setTimeout(() => {
+                    window.location.href = CONFIG.BLOG_LOGIN_URL;
+                }, 500);
             }
         }
     };

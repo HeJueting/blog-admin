@@ -72,6 +72,11 @@ const BucketModal: React.FC<IBucketModalProps> = ({
             window.$message.warning('访问密码不能为空 !');
             return;
         }
+        const reg = /^[a-zA-Z]+$/;
+        if (!reg.test(name)) {
+            window.$message.warning('存储桶名称只支持英文 !');
+            return;
+        }
         handleOk({
             name,
             purview,

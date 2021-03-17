@@ -134,7 +134,7 @@ const UserCloud: React.FC = () => {
                 // 删除成功
                 if (res.code === 0) {
                     initDataSource();
-                    window.$message.success(res.msg);
+                    window.$message.success('删除成功');
                 }
             },
         });
@@ -214,6 +214,7 @@ const UserCloud: React.FC = () => {
         if (isBucket) {
             setBucketModalVisible(true);
             setBucketModalOperation('create');
+            setBucketModalDefaultData({});
         } else {
             setFolderModalVisible(true);
         }
@@ -457,7 +458,9 @@ const UserCloud: React.FC = () => {
 
             {/* 文件夹：右键菜单 */}
             <ContextMenu id="user-cloud-folder-context-menu">
-                <MenuItem onClick={folderLimitOnClick}>权限</MenuItem>
+                {pathList.length === 1 && (
+                    <MenuItem onClick={folderLimitOnClick}>权限</MenuItem>
+                )}
                 <MenuItem onClick={folderDeleteOnClick}>删除</MenuItem>
             </ContextMenu>
 

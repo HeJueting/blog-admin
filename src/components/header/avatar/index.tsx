@@ -116,8 +116,10 @@ const Avatar: React.FC = () => {
                     onOk: async () => {
                         await localForage.setItem('token', '');
                         window.$message.success('退出登录成功');
-                        // to do list...
-                        // 跳转到前端界面
+                        // 跳转到登录界面
+                        setTimeout(() => {
+                            window.location.href = CONFIG.BLOG_LOGIN_URL;
+                        }, 500);
                     },
                 });
             },

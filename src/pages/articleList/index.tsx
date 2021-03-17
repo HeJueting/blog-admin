@@ -43,12 +43,12 @@ const ArticleList: React.FC = () => {
             key: 'comments',
         },
         {
-            title: '流量数量',
+            title: '浏览量',
             dataIndex: 'look',
             key: 'look',
         },
         {
-            title: '点赞数量',
+            title: '点赞量',
             dataIndex: 'good',
             key: 'good',
         },
@@ -286,6 +286,7 @@ const ArticleList: React.FC = () => {
                     _id: data._id,
                 });
                 if (res.code === 0) {
+                    setPage(1);
                     initDataSource();
                     window.$message.success('文章删除成功');
                 }

@@ -7,7 +7,8 @@ import activeAxios from './api/active';
 import CONFIG from './config';
 
 import style from './app.module.scss';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
+import './assets/styles/antd.css';
 import './assets/styles/global.scss';
 import './assets/styles/coverAntd.scss';
 

@@ -207,7 +207,7 @@ const ArticleList: React.FC = () => {
                     _id: 'all',
                     name: '全部（文章分类）',
                 });
-                setCategoryList(res.data.filter((item: any) => !item.parentId));
+                setCategoryList(res.data);
             } else {
                 window.$message.error(res.msg);
             }

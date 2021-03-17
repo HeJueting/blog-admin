@@ -383,7 +383,8 @@ const UserCloud: React.FC = () => {
                         action="/minio/admin/resource/import"
                         uploadDone={resourceImport}
                         antdProps={{
-                            accept: 'application/zip',
+                            accept:
+                                'application/zip,application/x-zip,application/x-zip-compressed',
                         }}
                     >
                         <Button type="primary">一键导入</Button>

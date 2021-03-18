@@ -59,11 +59,11 @@ const RecordList: React.FC = () => {
     const sortList = [
         {
             value: -1,
-            name: '创建时间(降序)',
+            name: '发生时间(降序)',
         },
         {
             value: 1,
-            name: '创建时间(升序)',
+            name: '发生时间(升序)',
         },
     ];
     // 关键字

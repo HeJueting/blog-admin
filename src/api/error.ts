@@ -9,7 +9,7 @@ const errorAxios = {
             url: '/error/frontend/collect',
             data: {
                 msg: data.msg,
-                type: 'web-admin-log',
+                type: 'web-admin',
             },
         }),
 };

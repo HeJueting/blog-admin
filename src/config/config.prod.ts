@@ -10,8 +10,8 @@ const prodConfig = {
     FILE_REQUEST_PATH: `${server_url}/minio/frontend/access/file`,
     // 图片请求地址
     IMAGE_REQUEST_PATH: `${server_url}/minio/frontend/access/image`,
-    // 博客前端登录地址
-    BLOG_LOGIN_URL: 'http://hejueting.cn/blog/login',
+    // 博客前端地址
+    BLOG_URL: 'http://hejueting.cn',
 };
 
 export default prodConfig;

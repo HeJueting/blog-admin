@@ -74,7 +74,7 @@ const Avatar: React.FC = () => {
                 setVisible(false);
                 // 跳转到登录界面
                 setTimeout(() => {
-                    window.location.href = CONFIG.BLOG_LOGIN_URL;
+                    window.location.href = `${CONFIG.BLOG_URL}/blog/login`;
                 }, 500);
             }
         }
@@ -118,7 +118,7 @@ const Avatar: React.FC = () => {
                         window.$message.success('退出登录成功');
                         // 跳转到登录界面
                         setTimeout(() => {
-                            window.location.href = CONFIG.BLOG_LOGIN_URL;
+                            window.location.href = `${CONFIG.BLOG_URL}/blog/login`;
                         }, 500);
                     },
                 });

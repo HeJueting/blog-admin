@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { timeFormat } from '../../utils/help';
 import articleAxios from '../../api/article';
 import articleCategoryAxios from '../../api/articleCategory';
+import CONFIG from '../../config';
 // 组件
 import { Select, Input, Pagination, InputNumber, Table, Modal } from 'antd';
 // 接口
@@ -21,7 +22,7 @@ const ArticleList: React.FC = () => {
                 <a
                     rel="noopener noreferrer"
                     target="_blank"
-                    href={`www.baidu.com/${data._id}`}
+                    href={`${CONFIG.BLOG_URL}/blog/article/${data._id}`}
                 >
                     {value}
                 </a>

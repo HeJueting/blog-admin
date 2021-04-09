@@ -36,7 +36,7 @@ const App: React.FC = () => {
         } else {
             window.$message.error('未登录，即将跳转到登录页面');
             setTimeout(() => {
-                window.location.href = CONFIG.BLOG_LOGIN_URL;
+                window.location.href = `${CONFIG.BLOG_URL}/blog/login`;
             }, 1000);
         }
     };

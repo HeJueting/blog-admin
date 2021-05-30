@@ -5,7 +5,7 @@ import axios from 'axios';
 import localForage from 'localforage';
 import minioAxios from '../../api/minio';
 import CONFIG from '../../config';
-import { timeFormat } from '../../utils/help';
+import { timeFormat, showLoading, hiddenLoading } from '../../utils/help';
 import lodash from 'lodash';
 
 import { Button, Modal } from 'antd';
@@ -272,6 +272,7 @@ const UserCloud: React.FC = () => {
 
     // 一键导出
     const resourceExport = async () => {
+        showLoading();
         // 请求zip压缩包
         const token = await localForage.getItem('token');
         axios
@@ -287,9 +288,11 @@ const UserCloud: React.FC = () => {
                 a.download = 'minio-files.zip';
                 a.href = url;
                 a.click();
+                hiddenLoading();
                 window.$message.success('一键导出资源成功');
             })
             .catch((err) => {
+                hiddenLoading();
                 window.$message.error('一键导出资源失败：', err);
             });
     };

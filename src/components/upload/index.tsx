@@ -4,6 +4,7 @@ import { showLoading, hiddenLoading } from '../../utils/help';
 import CONFIG from '../../config';
 import localForage from 'localforage';
 import { Upload as AntdUpload } from 'antd';
+import lodash from '../../utils/lodash';
 
 // 接口：file对象
 interface IFileObj {
@@ -60,7 +61,11 @@ const Upload: React.FC<IUploadProps> = ({
         const { file } = params;
         switch (file.status) {
             case 'error':
-                window.$message.error(file.response.msg || file.error.message);
+                const errMsg =
+                    lodash.get(file, 'response.msg') ||
+                    lodash.get(file, 'error.message') ||
+                    '文件上传失败';
+                window.$message.error(errMsg);
                 hiddenLoading();
                 break;
             case 'done':

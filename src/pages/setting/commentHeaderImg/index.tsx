@@ -37,6 +37,15 @@ const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({
         }
     }, [data]);
 
+    // 背景图片的展示
+    const headImageUrl = (bacImg: string) => {
+        let res = bacImg;
+        if (bacImg && bacImg.indexOf('temporary') === -1) {
+            res = `${CONFIG.IMAGE_REQUEST_PATH}/setting/${bacImg}?width=100`;
+        }
+        return res;
+    };
+
     // 保存
     const save = async () => {
         const res = await settingAxios.update({
@@ -101,7 +110,10 @@ const CommentHeaderImg: React.FC<ICommentHeaderImgProps> = ({
                     <div className={style['headerImg-wrap']} key={item.img}>
                         <div className={style['info']}>
                             <div className={style['img-wrap']}>
-                                <img alt="用户评论头像" src={item.img} />
+                                <img
+                                    alt="用户评论头像"
+                                    src={headImageUrl(item.img)}
+                                />
                                 <div className={style['mask']}>
                                     <Icon
                                         onClick={() => {

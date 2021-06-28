@@ -154,7 +154,14 @@
     background: $navBar-item-active;
 }
 
-.ant-tree-switcher {
-    display: flex;
-    align-items: center;
+.ant-tree .ant-tree-treenode {
+    padding: 0 1vw 0 0.3vw;
+    &:hover {
+        background: $article-category-bacShowdow;
+    }
+    .ant-tree-switcher {
+        width: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
 }

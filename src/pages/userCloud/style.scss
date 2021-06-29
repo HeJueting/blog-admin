@@ -31,11 +31,11 @@
     .resource-box {
         display: flex;
         flex-wrap: wrap;
-        min-height: calc(100vh - 15vw);
         padding: 1.6vw 0 0 0;
         .react-contextmenu-wrapper {
             width: 5vw;
             height: 4.2vw;
+            margin-bottom: 1.5vw;
             .resource-wrap {
                 display: flex;
                 flex-direction: column;

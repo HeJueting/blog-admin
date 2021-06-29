@@ -34,6 +34,7 @@
 // 中间资源部分
 .cloud-content {
     position: relative;
+    min-height: calc(100vh - 15vw);
     // 上传按钮
     .upload-btn {
         position: absolute;

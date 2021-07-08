@@ -11,7 +11,7 @@ const recordAxios = {
     list: (data: IRecordList) =>
         Axios({
             method: 'post',
-            url: '/record/admin/list',
+            url: '/record/frontend/list',
             data,
         }),
     // 创建生活记录

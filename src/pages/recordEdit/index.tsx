@@ -79,6 +79,10 @@ const RecordEdit: React.FC = () => {
             }
         }
     };
+    // 点击取消
+    const cancel = () => {
+        history.push('/record/list', null);
+    };
 
     return (
         <>
@@ -111,7 +115,7 @@ const RecordEdit: React.FC = () => {
                 <Button size="large" type="primary" onClick={submit}>
                     {isEdit ? '更新' : '提交'}
                 </Button>
-                <Button className={style['btn']} size="large">
+                <Button className={style['btn']} size="large" onClick={cancel}>
                     取消
                 </Button>
             </div>
